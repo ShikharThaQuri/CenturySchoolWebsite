@@ -25,7 +25,7 @@ function DeletePost(props: any) {
 
   return (
     <DeleteIcon
-      className="mx-[0.5rem] text-[#de2426] cursor-pointer"
+      className=" text-[#de2426] cursor-pointer"
       onClick={deleteButtonHendel}
     />
   );

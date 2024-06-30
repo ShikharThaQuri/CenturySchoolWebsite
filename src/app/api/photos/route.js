@@ -19,8 +19,6 @@ export async function POST(req) {
     const imageCategory = formData.get("imageCategory");
     const image = formData.get("image");
 
-    console.log(imageCategory);
-
     if (!image) {
       return Response.json({ success: false, msg: "There is no File." });
     }
@@ -56,8 +54,6 @@ export async function POST(req) {
     });
 
     const result = await newPhoto.save();
-
-    console.log(result);
 
     return Response.json(
       { success: true, msg: "Posted the photo.", result },

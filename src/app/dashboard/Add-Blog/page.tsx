@@ -2,6 +2,9 @@ import React from "react";
 import Form from "./form";
 import axios from "axios";
 import DeletePost from "./deletePost";
+import Link from "next/link";
+
+import EditIcon from "@mui/icons-material/Edit";
 
 async function getData() {
   try {
@@ -33,8 +36,16 @@ async function BlogPage() {
             <h1 className="text-[1.3rem] font-bold" key={i}>
               {data.result[items].writerName}
             </h1>
-            <div>
-              <h1 className="ml-[1rem]">{data.result[items].date}</h1>
+            <div className="flex items-center">
+              <h1 className="w-[5rem] text-nowrap overflow-hidden">
+                {data.result[items].createdAt}
+              </h1>
+              <Link
+                className="mx-[1.5rem]"
+                href={`/dashboard/Add-Blog/${data.result[items]._id}`}
+              >
+                <EditIcon className="text-[#de2426] text-[1.6rem]" />
+              </Link>
               <DeletePost singlNotice={data.result[items]} />
             </div>
           </div>

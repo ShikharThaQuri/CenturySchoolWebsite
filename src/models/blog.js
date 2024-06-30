@@ -20,12 +20,8 @@ const blogSchema = new mongoose.Schema(
         message: "{VALUE} is not supported",
       },
     },
-    data: {
-      type: Date,
-      default: Date.now,
-    },
-  }
-  // ,{ timestamps: true }
+  },
+  { timestamps: true }
 );
 
 module.exports = mongoose.models.blogs || mongoose.model("blogs", blogSchema);
