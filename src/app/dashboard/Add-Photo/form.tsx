@@ -4,9 +4,13 @@ import React, { FormEvent, useState } from "react";
 
 import UploadIcon from "@mui/icons-material/Upload";
 import axios, { AxiosError } from "axios";
+import { useRouter } from "next/navigation";
 
 function Form() {
+  const { refresh } = useRouter();
+
   const [photoDis, setPhotoDis] = useState<string>("");
+  const [category, setCategory] = useState<string>("");
   const [file, setFile] = useState<File>();
   const [loading, setLoding] = useState<Boolean>(false);
   const [error, setError] = useState<string>("");
@@ -21,6 +25,7 @@ function Form() {
 
       const Data = new FormData();
       Data.set("imageDis", photoDis);
+      Data.set("imageCategory", category);
       Data.set("image", file);
 
       const { data } = await axios.post(
@@ -31,15 +36,17 @@ function Form() {
         }
       );
 
-      if (data) {
-        setLoding(false);
-      }
+      setLoding(false);
 
       setPhotoDis("");
     } catch (error) {
       const e = error as AxiosError<any>;
-      setError(e.response?.data.msg);
+      console.log(e);
+
+      setError(e.response?.data.msg.message);
     }
+
+    refresh();
   };
 
   return (
@@ -63,6 +70,27 @@ function Form() {
             setPhotoDis(e.target.value);
           }}
         />
+
+        <label
+          htmlFor="Notice Color"
+          className="text-[1.2rem] mb-[0.5rem] block font-bold"
+        >
+          Category
+        </label>
+        <select
+          className="px-[0.8rem] py-[0.5rem] text-[1.2rem] rounded-[0.5rem] outline-none mb-[2rem]"
+          defaultValue={"Default"}
+          onChange={(e) => {
+            setCategory(e.target[e.target.options.selectedIndex].innerText);
+          }}
+        >
+          <option value="Default" hidden disabled>
+            Select Category
+          </option>
+          <option value="Special Events">Special Events</option>
+          <option value="Friday Games">Friday Games</option>
+          <option value="School Boundory">School Boundory</option>
+        </select>
 
         <div className="text-center my-[3rem]">
           <input

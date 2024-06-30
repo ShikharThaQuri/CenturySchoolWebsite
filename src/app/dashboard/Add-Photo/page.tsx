@@ -3,6 +3,7 @@ import React from "react";
 import axios, { AxiosError } from "axios";
 import Form from "./form";
 import DeleteImage from "./deleteImage";
+import Image from "next/image";
 
 async function getData() {
   try {
@@ -21,18 +22,19 @@ async function PhotoPage() {
     <>
       <Form />
 
-      <div className="py-[5rem]">
+      <div className="py-[5rem] px-[1rem] flex flex-wrap justify-right gap-[0.6rem]">
         {Object.keys(data.result).map((items, i) => (
-          <div
-            className="flex justify-between items-center mb-[1.5rem] px-[1rem] py-[1rem] bg-white mx-[2rem]"
-            key={i}
-          >
-            <h1 className="text-[1.3rem] font-bold" key={i}>
-              {data.result[items].photoDis}
-            </h1>
-            <div>
-              <DeleteImage singlImage={data.result[items]} />
-            </div>
+          <div className="relative w-full max-w-[20rem] h-[20rem]" key={i}>
+            <Image
+              src={data.result[items].image_Url}
+              alt="photo"
+              sizes="(max-width: 768px) 100vw, 700px"
+              fill
+              priority
+              className="border object-cover object-center relative"
+              key={i}
+            />
+            <DeleteImage singlImage={data.result[items]} />
           </div>
         ))}
       </div>

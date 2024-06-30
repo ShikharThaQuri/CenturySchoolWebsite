@@ -16,10 +16,29 @@ export async function POST(req) {
 
     const formData = await req.formData();
     const imageDis = formData.get("imageDis");
+    const imageCategory = formData.get("imageCategory");
     const image = formData.get("image");
 
     if (!image) {
       return Response.json({ success: false, msg: "There is no File." });
+    }
+    if (imageDis === "") {
+      return Response.json(
+        {
+          success: false,
+          msg: { message: "You must provide the Image Discription." },
+        },
+        { status: 400 }
+      );
+    }
+    if (imageCategory === "") {
+      return Response.json(
+        {
+          success: false,
+          msg: { message: "You must provide the Image Category." },
+        },
+        { status: 400 }
+      );
     }
 
     const bytes = await image.arrayBuffer();
@@ -31,6 +50,7 @@ export async function POST(req) {
       photoDis: imageDis,
       image_Url: data?.secure_url,
       public_id: data?.public_id,
+      category: imageCategory,
     });
 
     const result = newPhoto.save();

@@ -14,8 +14,13 @@ const photoSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    type: {
+    category: {
       type: String,
+      required: [true, "Must provide the category of the photo."],
+      enum: {
+        values: ["Special Events", "Friday Games", "School Boundory"],
+        message: "{VALUE} is not supported",
+      },
     },
   },
   {
