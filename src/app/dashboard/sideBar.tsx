@@ -34,6 +34,14 @@ function SideBar() {
       >
         <Link href="/dashboard/Add-Photo">Add Photo</Link>
       </h1>
+
+      <h1
+        className={`${
+          pathname === "/dashboard/Add-Blog" ? "bg-[#BC6C25]" : "bg-[#DDA15E]"
+        } ${sideDesign}`}
+      >
+        <Link href="/dashboard/Add-Blog">Add Blog</Link>
+      </h1>
     </div>
   );
 }

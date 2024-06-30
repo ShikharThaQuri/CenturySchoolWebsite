@@ -43,7 +43,7 @@ function Form() {
       const e = error as AxiosError<any>;
       console.log(e);
 
-      setError(e.response?.data.msg.message);
+      setError(e.response?.data.msg);
     }
 
     refresh();
