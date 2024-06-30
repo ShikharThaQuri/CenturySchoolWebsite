@@ -23,6 +23,7 @@ const photoSchema = new mongoose.Schema(
           "Friday Games",
           "School Boundory",
           "school Family",
+          "school Hero",
         ],
         message: "{VALUE} is not supported",
       },
