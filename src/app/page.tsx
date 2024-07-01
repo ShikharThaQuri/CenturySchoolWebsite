@@ -16,7 +16,7 @@ export default function Home() {
       <FourthSection />
       <GallerySection />
       <TeacherSection />
-      <EventsSection />
+      {/* <EventsSection /> */}
       <MapSection />
     </>
   );

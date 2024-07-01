@@ -22,8 +22,6 @@ async function GalleryPage() {
     <div className="pb-[3rem]">
       <ImageLinkPage />
 
-      {/* <h1 className="pt-[3rem] text-center font-bold text-[1.5rem]">All</h1> */}
-
       <div className="my-[4rem]  px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
         {Object.keys(data.result).map((items, i) => (
           <div className="relative w-full max-w-[20rem] h-[20rem]" key={i}>

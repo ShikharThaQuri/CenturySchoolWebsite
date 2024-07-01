@@ -34,12 +34,7 @@ export async function POST(req) {
         { status: 400 }
       );
     }
-    if (body.color === "") {
-      return Response.json(
-        { success: false, msg: { message: "You must provide the Color." } },
-        { status: 400 }
-      );
-    }
+
     if (body.type === "") {
       return Response.json(
         { success: false, msg: { message: "You must provide the Type." } },
@@ -50,7 +45,6 @@ export async function POST(req) {
     const newNotice = new notice({
       noticeTitle: body.noticeTitle,
       disc: body.disc,
-      color: body.color,
       type: body.type,
     });
 

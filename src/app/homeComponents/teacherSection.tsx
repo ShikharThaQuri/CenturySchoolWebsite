@@ -10,7 +10,7 @@ import Link from "next/link";
 
 function TeacherSection() {
   return (
-    <div className="h-[90vh] px-[11.5rem] bg-[#F1FAEE] pt-[3rem] flex flex-col justify-center">
+    <div className="h-[90vh] bg-[#faedcd] px-[11.5rem] bg-[#F1FAEE] pt-[3rem] flex flex-col justify-center">
       <div className="h-[60%] mb-[2rem]  flex justify-evenly items-center">
         <div className="h-[100%] w-[18rem] px-[0.5rem] border relative bg-white flex flex-col justify-between items-center rounded-[0.5rem]">
           <Image
@@ -79,7 +79,7 @@ function TeacherSection() {
         </div>
       </div>
 
-      <div className="text-center">
+      <div className="text-center mt-[2rem]">
         <Link
           href="/About-Us"
           className="bg-[#FDE773] px-[1.2rem] py-[0.5rem] font-bold text-[1.2rem]"

@@ -97,7 +97,7 @@ export async function GET(req) {
     }
 
     const page = Number(pageQuery) || 1;
-    const limit = Number(limitQuery) || 10;
+    const limit = Number(limitQuery) || 100;
     const skip = (page - 1) * limit;
 
     Result = Result.skip(skip).limit(limit);

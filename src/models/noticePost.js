@@ -10,19 +10,11 @@ const noticePostSchema = new mongoose.Schema(
       type: String,
       required: [true, "Must provide the discription."],
     },
-    color: {
-      type: String,
-      required: [true, "Must provide the Color."],
-      enum: {
-        values: ["red", "green"],
-        message: "{VALUE} is not supported",
-      },
-    },
     type: {
       type: String,
       required: [true, "Must provide the Type of Notice."],
       enum: {
-        values: ["Parmanent", "Temporori"],
+        values: ["Pin", "Normal"],
         message: "{VALUE} is not supported",
       },
     },

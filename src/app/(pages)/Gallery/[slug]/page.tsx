@@ -3,9 +3,14 @@ import Image from "next/image";
 import React, { Suspense } from "react";
 import SingleImage from "./singleImage";
 import ImageLinkPage from "../imagelinks";
+import Pagination from "./pagination";
 
-async function getData(category: any, currentPage: any) {
-  let getQuery = `?category=${category}&page=${currentPage}`;
+async function getData(
+  category: string,
+  currentPage: number,
+  imageLimit: number
+) {
+  let getQuery = `?category=${category}&page=${currentPage}&limit=${imageLimit}`;
 
   const { data } = await axios.get(
     `http://localhost:3000/api/images${getQuery}`
@@ -20,12 +25,14 @@ async function ImageTypePage({
   searchParams?: {
     category?: string;
     page?: string;
+    limit?: string;
   };
 }) {
   const category = searchParams?.category || "";
   const currentPage = Number(searchParams?.page) || 1;
+  const imageLimit = Number(searchParams?.limit) || 3;
 
-  const data = await getData(category, currentPage);
+  const data = await getData(category, currentPage, imageLimit);
 
   return (
     <div className="pb-[3rem]">
@@ -50,7 +57,7 @@ async function ImageTypePage({
           ))}
         </div>
       </Suspense>
-      {/* <Pagination data={data} /> */}
+      <Pagination data={data} />
     </div>
   );
 }

@@ -9,7 +9,6 @@ function Form() {
 
   const [noticeTitle, setNoticeTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const [color, setColor] = useState<string>("");
   const [type, setType] = useState<string>("");
 
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -21,7 +20,6 @@ function Form() {
       await axios.post("http://localhost:3000/api/notice", {
         noticeTitle: noticeTitle,
         disc: description,
-        color: color,
         type: type,
       });
 
@@ -73,28 +71,6 @@ function Form() {
           htmlFor="Notice Color"
           className="text-[1.2rem] mb-[0.5rem] block font-bold"
         >
-          Color
-        </label>
-        <select
-          name=""
-          id=""
-          className="px-[0.8rem] py-[0.5rem] text-[1.2rem] rounded-[0.5rem] outline-none mb-[2rem]"
-          defaultValue={"Default"}
-          onChange={(e) => {
-            setColor(e.target[e.target.options.selectedIndex].innerText);
-          }}
-        >
-          <option value="Default" hidden disabled>
-            Select Color
-          </option>
-          <option value="red">red</option>
-          <option value="green">green</option>
-        </select>
-
-        <label
-          htmlFor="Notice Color"
-          className="text-[1.2rem] mb-[0.5rem] block font-bold"
-        >
           Type
         </label>
         <select
@@ -109,8 +85,8 @@ function Form() {
           <option value="Default" hidden disabled>
             Notice Type
           </option>
-          <option value="Parmanent">Parmanent</option>
-          <option value="Temporori">Temporori</option>
+          <option value="Pin">Pin</option>
+          <option value="Normal">Normal</option>
         </select>
 
         <div className="text-right">
