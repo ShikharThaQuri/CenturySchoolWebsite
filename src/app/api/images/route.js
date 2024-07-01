@@ -75,10 +75,43 @@ export async function GET(req) {
       );
     }
 
-    const result = await images.find({});
+    const searchParams = req.nextUrl.searchParams;
+    const categoryQuery = searchParams.get("category");
+    const pageQuery = searchParams.get("page");
+    const limitQuery = searchParams.get("limit");
+    const sort = searchParams.get("sort");
+
+    const queryObject = {};
+
+    if (categoryQuery) {
+      queryObject.category = categoryQuery;
+    }
+
+    let Result = images.find(queryObject);
+
+    if (sort) {
+      const sortList = sort.split(",").join(" ");
+      Result = Result.sort(sortList);
+    } else {
+      Result = Result.sort("createAt");
+    }
+
+    const page = Number(pageQuery) || 1;
+    const limit = Number(limitQuery) || 10;
+    const skip = (page - 1) * limit;
+
+    Result = Result.skip(skip).limit(limit);
+
+    const result = await Result;
+    const result2 = await images.find(queryObject);
 
     return Response.json(
-      { success: true, msg: "You are Successfull.", result },
+      {
+        success: true,
+        msg: "You are Successfull.",
+        result,
+        nbHits: result2.length,
+      },
       { status: 200 }
     );
   } catch (error) {

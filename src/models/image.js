@@ -21,8 +21,8 @@ const imageSchema = new mongoose.Schema(
         values: [
           "Special Events",
           "Friday Games",
-          "School Boundory",
-          "school Family",
+          "School Boundary",
+          "School Family",
         ],
         message: "{VALUE} is not supported",
       },

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const navLinks =
   "m-[1.5rem] text-[20px] font-bold after:content-{} after:w-[0%] after:h-[0.2rem] after:bg-[#f44336] after:block after:m-[auto] after:duration-[200ms] hover:after:w-[100%]";

@@ -89,7 +89,8 @@ function Form() {
           </option>
           <option value="Special Events">Special Events</option>
           <option value="Friday Games">Friday Games</option>
-          <option value="School Boundory">School Boundory</option>
+          <option value="School Boundary">School Boundary</option>
+          <option value="School Family">School Family</option>
         </select>
 
         <div className="text-center my-[3rem]">

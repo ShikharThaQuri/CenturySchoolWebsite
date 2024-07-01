@@ -3,6 +3,7 @@ import React from "react";
 
 import axios from "axios";
 import SingleImage from "./singleImage";
+import ImageLinkPage from "./imagelinks";
 
 async function getData() {
   try {
@@ -19,23 +20,11 @@ async function GalleryPage() {
 
   return (
     <div className="pb-[3rem]">
-      <div className="px-[6rem] text-white">
-        <button className="bg-[#3a0ca3] px-[1rem] py-[0.5rem] rounded-[2rem]">
-          Special Events
-        </button>
-        <button className="bg-[#7209b7] px-[1rem] py-[0.5rem] rounded-[2rem]">
-          Friday Games
-        </button>
-        <button className="bg-[#7209b7] px-[1rem] py-[0.5rem] rounded-[2rem]">
-          School Ground
-        </button>
-      </div>
+      <ImageLinkPage />
 
-      <h1 className="pt-[3rem] text-center font-bold text-[1.5rem]">
-        Special Events
-      </h1>
+      {/* <h1 className="pt-[3rem] text-center font-bold text-[1.5rem]">All</h1> */}
 
-      <div className="py-[5rem] px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
+      <div className="my-[4rem]  px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
         {Object.keys(data.result).map((items, i) => (
           <div className="relative w-full max-w-[20rem] h-[20rem]" key={i}>
             <Image
