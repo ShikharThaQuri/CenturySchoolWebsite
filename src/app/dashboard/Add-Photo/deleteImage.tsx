@@ -14,7 +14,7 @@ function DeleteImage(props: any) {
 
     try {
       await axios.delete(
-        `http://localhost:3000/api/photos/${props.singlImage._id}`
+        `http://localhost:3000/api/images/${props.singlImage._id}`
       );
     } catch (error) {
       console.log(error);

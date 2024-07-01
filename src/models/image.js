@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const photoSchema = new mongoose.Schema(
+const imageSchema = new mongoose.Schema(
   {
-    photoDis: {
+    imageDis: {
       type: String,
       require: true,
     },
@@ -16,7 +16,7 @@ const photoSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      required: [true, "Must provide the category of the photo."],
+      required: [true, "Must provide the category of the image."],
       enum: {
         values: [
           "Special Events",
@@ -34,4 +34,4 @@ const photoSchema = new mongoose.Schema(
 );
 
 module.exports =
-  mongoose.models.photos || mongoose.model("photos", photoSchema);
+  mongoose.models.images || mongoose.model("images", imageSchema);

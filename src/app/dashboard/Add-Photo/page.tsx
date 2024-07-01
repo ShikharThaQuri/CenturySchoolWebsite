@@ -7,7 +7,7 @@ import Image from "next/image";
 
 async function getData() {
   try {
-    const { data } = await axios.get("http://localhost:3000/api/photos");
+    const { data } = await axios.get("http://localhost:3000/api/images");
 
     return data;
   } catch (error) {

@@ -1,7 +1,7 @@
 import { UploadImage } from "@/lib/upload_image";
 
 const connectDB = require("@/db/connect");
-const photo = require("@/models/photos");
+const images = require("@/models/image");
 
 export async function POST(req) {
   try {
@@ -46,17 +46,17 @@ export async function POST(req) {
 
     const data = await UploadImage(buffer);
 
-    const newPhoto = new photo({
-      photoDis: imageDis,
+    const newImage = new images({
+      imageDis: imageDis,
       category: imageCategory,
       image_Url: data?.secure_url,
       public_id: data?.public_id,
     });
 
-    const result = await newPhoto.save();
+    const result = await newImage.save();
 
     return Response.json(
-      { success: true, msg: "Posted the photo.", result },
+      { success: true, msg: "Posted the image.", result },
       { status: 201 }
     );
   } catch (error) {
@@ -75,7 +75,7 @@ export async function GET(req) {
       );
     }
 
-    const result = await photo.find({});
+    const result = await images.find({});
 
     return Response.json(
       { success: true, msg: "You are Successfull.", result },

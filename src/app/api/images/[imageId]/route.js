@@ -1,16 +1,16 @@
 const connectDB = require("@/db/connect");
-const photo = require("@/models/photos");
+const image = require("@/models/image");
 
 export async function DELETE(req, { params }) {
   try {
     await connectDB();
-    const photoId = params.photoId;
+    const imageId = params.imageId;
 
-    const deletedNotice = await photo.findOneAndDelete({ _id: photoId });
+    const deletedNotice = await image.findOneAndDelete({ _id: imageId });
 
     if (!deletedNotice) {
       return Response.json(
-        { success: false, msg: "There is no such Photo." },
+        { success: false, msg: "There is no such image." },
         { status: 404 }
       );
     }

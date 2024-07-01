@@ -29,7 +29,7 @@ function Form() {
       Data.set("image", file);
 
       const { data } = await axios.post(
-        "http://localhost:3000/api/photos",
+        "http://localhost:3000/api/images",
         Data,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -94,7 +94,7 @@ function Form() {
 
         <div className="text-center my-[3rem]">
           <input
-            className="hidden"
+            // className="hidden"
             type="file"
             name="file"
             id="uploadImg"

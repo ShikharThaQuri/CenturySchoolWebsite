@@ -1,16 +1,22 @@
 import Image from "next/image";
 import React from "react";
 
-import Photo1 from "@/img/event_photo_1.jpg";
-import Photo2 from "@/img/photo2.jpeg";
-import Profile6 from "@/img/profile-6.jpg";
+import axios from "axios";
+import SingleImage from "./singleImage";
 
-import CloseIcon from "@mui/icons-material/Close";
+async function getData() {
+  try {
+    const { data } = await axios.get("http://localhost:3000/api/images");
 
-const imgDes =
-  "w-[20rem] h-[20rem] rounded-[1rem] object-cover object-center my-[0.5rem]";
+    return data;
+  } catch (error) {
+    console.log("error");
+  }
+}
 
-function GalleryPage() {
+async function GalleryPage() {
+  const data = await getData();
+
   return (
     <div className="pb-[3rem]">
       <div className="px-[6rem] text-white">
@@ -24,43 +30,27 @@ function GalleryPage() {
           School Ground
         </button>
       </div>
+
       <h1 className="pt-[3rem] text-center font-bold text-[1.5rem]">
         Special Events
       </h1>
 
-      <div className="px-[6rem] my-[1rem] flex flex-wrap justify-evenly items-center">
-        <div>
-          <Image src={Photo1} alt="image" className={imgDes} />
-        </div>
-        <div>
-          <Image src={Photo2} alt="image" className={imgDes} />
-        </div>
-        <div>
-          <Image src={Profile6} alt="image" className={imgDes} />
-        </div>
-        <div>
-          <Image src={Photo1} alt="image" className={imgDes} />
-        </div>
-        <div>
-          <Image src={Photo2} alt="image" className={imgDes} />
-        </div>
-        <div>
-          <Image src={Profile6} alt="image" className={imgDes} />
-        </div>
-      </div>
+      <div className="py-[5rem] px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
+        {Object.keys(data.result).map((items, i) => (
+          <div className="relative w-full max-w-[20rem] h-[20rem]" key={i}>
+            <Image
+              src={data.result[items].image_Url}
+              alt="photo"
+              sizes="(max-width: 768px) 100vw, 700px"
+              fill
+              priority
+              className="border object-cover object-center relative "
+              key={i}
+            />
 
-      {/* --------------- Single Image Effect -------------------- */}
-
-      <div className="fixed top-0 bottom-0 left-0 right-0 bg-[#001219] opacity-[0.98] hidden">
-        <div className="z-50 relative opacity-100 flex justify-center items-center w-full h-full">
-          <CloseIcon className="absolute right-[2rem] top-[2rem] text-white cursor-pointer" />
-
-          <Image
-            src={Profile6}
-            alt="image"
-            className="w-[auto] h-[30rem] rounded-[1rem] object-cover object-center my-[0.5rem]"
-          />
-        </div>
+            <SingleImage singlImage={data.result[items]} keys={i} />
+          </div>
+        ))}
       </div>
     </div>
   );
