@@ -1,9 +1,7 @@
-import React from "react";
-
-import Link from "next/link";
-import Gellarymid from "./gellarymid";
-import Image from "next/image";
 import axios from "axios";
+import Image from "next/image";
+import React from "react";
+import DeleteImage from "./deleteImage";
 
 async function getData() {
   try {
@@ -15,20 +13,20 @@ async function getData() {
   }
 }
 
-async function GallerySection() {
+export default async function PinPhotosPage() {
   const data = await getData();
 
   return (
-    <div className="px-[5.5rem] bg-[#0096C7] py-[4rem]">
-      <h1 className="font-bold text-[2rem] text-[#ffff] text-center mb-[2rem]">
-        School Gallary
+    <>
+      <h1 className="text-center text-[1.5rem] text-[#c1121f] font-bold pt-[1rem]">
+        Pin Images
       </h1>
 
-      <div className="my-[4rem]  px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
+      <div className="mt-[3rem] pb-[5rem] px-[1rem] flex flex-wrap justify-right gap-[0.6rem]">
         {Object.keys(data.result).map((items, i) => (
           <div key={i}>
             {data.result[items].pin === true ? (
-              <div className="relative w-[26rem] h-[20rem]" key={i}>
+              <div className="relative w-[20rem] h-[20rem]" key={i}>
                 <Image
                   src={data.result[items].image_Url}
                   alt="photo"
@@ -38,7 +36,7 @@ async function GallerySection() {
                   className="border object-cover object-center relative"
                   key={i}
                 />
-                <Gellarymid singlImage={data.result[items]} keys={i} />
+                <DeleteImage singlImage={data.result[items]} />
               </div>
             ) : (
               ""
@@ -46,17 +44,9 @@ async function GallerySection() {
           </div>
         ))}
       </div>
-
-      <div className="text-center mt-[4rem]">
-        <Link
-          href="/Gallery"
-          className="bg-[#FDE773] px-[1.2rem] py-[0.5rem] font-bold text-[1.2rem]"
-        >
-          View More
-        </Link>
-      </div>
-    </div>
+      <h1 className="text-right pb-[1rem] mr-[1rem] text-[#e63946]">
+        Only 6 Images are required.
+      </h1>
+    </>
   );
 }
-
-export default GallerySection;

@@ -14,6 +14,10 @@ const imageSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    pin: {
+      type: Boolean,
+      default: false,
+    },
     category: {
       type: String,
       required: [true, "Must provide the category of the image."],

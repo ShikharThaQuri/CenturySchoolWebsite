@@ -17,6 +17,7 @@ export async function POST(req) {
     const formData = await req.formData();
     const imageDis = formData.get("imageDis");
     const imageCategory = formData.get("imageCategory");
+    const pin = formData.get("pin");
     const image = formData.get("image");
 
     if (!image) {
@@ -49,6 +50,7 @@ export async function POST(req) {
     const newImage = new images({
       imageDis: imageDis,
       category: imageCategory,
+      pin: JSON.parse(pin),
       image_Url: data?.secure_url,
       public_id: data?.public_id,
     });

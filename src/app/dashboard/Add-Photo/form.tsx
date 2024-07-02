@@ -11,6 +11,7 @@ function Form() {
 
   const [photoDis, setPhotoDis] = useState<string>("");
   const [category, setCategory] = useState<string>("");
+  const [pin, setPin] = useState<boolean>(false);
   const [file, setFile] = useState<File>();
   const [loading, setLoding] = useState<Boolean>(false);
   const [error, setError] = useState<string>("");
@@ -26,6 +27,7 @@ function Form() {
       const Data = new FormData();
       Data.set("imageDis", photoDis);
       Data.set("imageCategory", category);
+      Data.set("pin", JSON.stringify(pin));
       Data.set("image", file);
 
       const { data } = await axios.post(
@@ -58,7 +60,7 @@ function Form() {
       <form onSubmit={submitHindelFunction}>
         <label
           htmlFor="Notice Heading"
-          className="text-[1.2rem] mb-[0.5rem] block font-bold"
+          className="text-[1.4rem] mb-[0.5rem] block font-bold"
         >
           Photo Details
         </label>
@@ -73,7 +75,7 @@ function Form() {
 
         <label
           htmlFor="Notice Color"
-          className="text-[1.2rem] mb-[0.5rem] block font-bold"
+          className="text-[1.4rem] mb-[0.5rem] block font-bold"
         >
           Category
         </label>
@@ -92,6 +94,23 @@ function Form() {
           <option value="School Boundary">School Boundary</option>
           <option value="School Family">School Family</option>
         </select>
+
+        <div className="">
+          <label
+            htmlFor="Notice Color"
+            className="text-[1.4rem] mb-[0.5rem] font-bold mr-[2rem]"
+          >
+            Pin
+          </label>
+          <input
+            type="checkbox"
+            checked={pin}
+            onChange={(e) => {
+              setPin(e.target.checked);
+            }}
+            className="w-[1.3rem] h-[1.3rem]"
+          />
+        </div>
 
         <div className="text-center my-[3rem]">
           <input

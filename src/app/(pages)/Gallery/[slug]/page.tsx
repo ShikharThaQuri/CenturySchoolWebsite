@@ -30,7 +30,7 @@ async function ImageTypePage({
 }) {
   const category = searchParams?.category || "";
   const currentPage = Number(searchParams?.page) || 1;
-  const imageLimit = Number(searchParams?.limit) || 3;
+  const imageLimit = Number(searchParams?.limit) || 8;
 
   const data = await getData(category, currentPage, imageLimit);
 
