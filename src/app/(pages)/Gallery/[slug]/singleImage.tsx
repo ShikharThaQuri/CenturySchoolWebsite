@@ -11,6 +11,7 @@ function SingleImage(props: any) {
     "https://res.cloudinary.com/dxr1ajuew/image/upload/v1719225691/centurySchoolGellay/rcrheibuweaylzqhqhxg.jpg"
   );
   const [imageDis, setImageDis] = useState<string>("");
+  const [date, setDate] = useState<string>("");
 
   return (
     <>
@@ -19,6 +20,7 @@ function SingleImage(props: any) {
         onClick={() => {
           setImage(props.singlImage.image_Url);
           setImageDis(props.singlImage.imageDis);
+          setDate(props.singlImage.createdAt);
           setActice(true);
         }}
       ></div>
@@ -50,8 +52,13 @@ function SingleImage(props: any) {
             key={props.keys}
           />
         </div>
-        <div className="mb-[-3rem] mt-[2rem]">
+        <div className="mb-[1rem] mt-[2rem]">
           <h1 className="text-white text-[1.3rem] font-bold">{imageDis}</h1>
+        </div>
+        <div className="w-full flex justify-end">
+          <h1 className="w-[5.4rem] mr-[2rem] text-nowrap overflow-hidden font-bold text-[#ffba08]">
+            {date}
+          </h1>
         </div>
       </div>
     </>

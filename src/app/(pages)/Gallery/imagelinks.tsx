@@ -2,20 +2,23 @@
 
 import Link from "next/link";
 import React from "react";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname, useSearchParams } from "next/navigation";
 
 const linkdign =
   "text-[1.2rem] px-[1.7rem] py-[0.65rem] rounded-[1rem] mx-[0.1rem]";
 
-function ImageLinkPage(props: any) {
-  const pathname = usePathname();
+function ImageLinkPage() {
+  const { slug } = useParams();
+
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category");
 
   return (
     <div className="px-[6rem] text-white">
-      <Link href="/Gallery">
+      <Link href="/Gallery/AllGallery">
         <button
           className={` ${
-            pathname === "/Gallery"
+            slug === "AllGallery"
               ? "bg-[#212529]"
               : "bg-[#495057] hover:bg-[#343a40] "
           }  ${linkdign}`}
@@ -26,7 +29,7 @@ function ImageLinkPage(props: any) {
       <Link href="/Gallery/hero?category=Special Events">
         <button
           className={`${
-            props.category === "Special Events"
+            category === "Special Events"
               ? "bg-[#212529]"
               : "bg-[#495057] hover:bg-[#343a40]"
           }  ${linkdign}`}
@@ -37,7 +40,7 @@ function ImageLinkPage(props: any) {
       <Link href="/Gallery/hero?category=Friday Games">
         <button
           className={`${
-            props.category === "Friday Games"
+            category === "Friday Games"
               ? "bg-[#212529]"
               : "bg-[#495057] hover:bg-[#343a40]"
           }  ${linkdign}`}
@@ -48,7 +51,7 @@ function ImageLinkPage(props: any) {
       <Link href="/Gallery/hero?category=School Boundary">
         <button
           className={`${
-            props.category === "School Boundary"
+            category === "School Boundary"
               ? "bg-[#212529]"
               : "bg-[#495057] hover:bg-[#343a40]"
           }  ${linkdign}`}
@@ -59,7 +62,7 @@ function ImageLinkPage(props: any) {
       <Link href="/Gallery/hero?category=School Family">
         <button
           className={`${
-            props.category === "School Family"
+            category === "School Family"
               ? "bg-[#212529]"
               : "bg-[#495057] hover:bg-[#343a40]"
           }  ${linkdign}`}

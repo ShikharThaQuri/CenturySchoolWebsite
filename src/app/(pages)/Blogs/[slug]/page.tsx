@@ -1,22 +1,34 @@
 import axios from "axios";
 import React, { Suspense } from "react";
+// import ImageLinkPage from "../imagelinks";
+import Pagination from "./pagination";
 
-async function getData() {
-  try {
-    const { data } = await axios.get("http://localhost:3000/api/blog");
+async function getData(type: string, currentPage: number, blogLimit: number) {
+  let getQuery = `?type=${type}&page=${currentPage}&limit=${blogLimit}`;
 
-    return data;
-  } catch (error) {
-    console.log("error");
-  }
+  const { data } = await axios.get(`http://localhost:3000/api/blog${getQuery}`);
+
+  return data;
 }
 
-async function BlogPage() {
-  const data = await getData();
+async function BlogTypePage({
+  searchParams,
+}: {
+  searchParams?: {
+    type?: string;
+    page?: string;
+    limit?: string;
+  };
+}) {
+  const type = searchParams?.type || "";
+  const currentPage = Number(searchParams?.page) || 1;
+  const blogLimit = Number(searchParams?.limit) || 10;
+
+  const data = await getData(type, currentPage, blogLimit);
 
   return (
     <div className="py-[2rem]">
-      <Suspense fallback={"loading..."}>
+      <Suspense key={type + currentPage} fallback={"loading..."}>
         {Object.keys(data.result).map((items, i) => (
           <div
             className="bg-[#FFEA9F] mx-[2rem] px-[1.5rem] pb-[1rem] mb-[2rem]"
@@ -47,8 +59,9 @@ async function BlogPage() {
           </div>
         ))}
       </Suspense>
+      <Pagination data={data} />
     </div>
   );
 }
 
-export default BlogPage;
+export default BlogTypePage;

@@ -30,13 +30,13 @@ async function ImageTypePage({
 }) {
   const category = searchParams?.category || "";
   const currentPage = Number(searchParams?.page) || 1;
-  const imageLimit = Number(searchParams?.limit) || 8;
+  const imageLimit = Number(searchParams?.limit) || 10;
 
   const data = await getData(category, currentPage, imageLimit);
 
   return (
     <div className="pb-[3rem]">
-      <ImageLinkPage category={category} />
+      <ImageLinkPage />
 
       <Suspense key={category + currentPage} fallback={"loading..."}>
         <div className="my-[4rem] px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">

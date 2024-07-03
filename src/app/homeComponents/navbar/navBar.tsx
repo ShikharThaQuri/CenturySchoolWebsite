@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname, useSearchParams } from "next/navigation";
 
 const navLinks =
   "m-[1.5rem] text-[20px] font-bold after:content-{} after:w-[0%] after:h-[0.2rem] after:bg-[#f44336] after:block after:m-[auto] after:duration-[200ms] hover:after:w-[100%]";
@@ -10,7 +10,11 @@ const navLinksSolid =
   "m-[1.5rem] text-[20px] font-bold after:content-{} after:w-[100%] after:h-[0.2rem] after:bg-[#f44336] after:block after:m-[auto] after:duration-[200ms] ";
 
 function NavBar() {
+  const { slug } = useParams();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const type = searchParams.get("type");
+  const category = searchParams.get("category");
 
   return (
     <>
@@ -41,19 +45,18 @@ function NavBar() {
               >
                 <Link href="/About-Us">About Us</Link>
               </li>
-              {/* <li
-                className={`${
-                  pathname === "/Programs" ? `${navLinksSolid}` : `${navLinks}`
-                }`}
-              >
-                <Link href="/Programs">Programs</Link>
-              </li> */}
+
               <li
                 className={`${
-                  pathname === "/Blogs" ? `${navLinksSolid}` : `${navLinks}`
+                  type === "story" ||
+                  type === "poem" ||
+                  type === "educational" ||
+                  slug === "AllBlogs"
+                    ? `${navLinksSolid}`
+                    : `${navLinks}`
                 }`}
               >
-                <Link href="/Blogs">Blog</Link>
+                <Link href="/Blogs/AllBlogs">Blog</Link>
               </li>
             </ul>
           </div>
@@ -66,10 +69,16 @@ function NavBar() {
             <ul className="flex items-center">
               <li
                 className={`${
-                  pathname === "/Gallery" ? `${navLinksSolid}` : `${navLinks}`
+                  slug === "AllGallery" ||
+                  category === "Special Events" ||
+                  category === "Friday Games" ||
+                  category === "School Boundary" ||
+                  category === "School Family"
+                    ? `${navLinksSolid}`
+                    : `${navLinks}`
                 }`}
               >
-                <Link href="/Gallery">Gallery</Link>
+                <Link href="/Gallery/AllGallery">Gallery</Link>
               </li>
               <li
                 className={`${
@@ -78,13 +87,7 @@ function NavBar() {
               >
                 <Link href="/Notice">Notice</Link>
               </li>
-              {/* <li
-                className={`${
-                  pathname === "/Materials" ? `${navLinksSolid}` : `${navLinks}`
-                }`}
-              >
-                <Link href="/Materials">Materials</Link>
-              </li> */}
+
               <li
                 className={`${
                   pathname === "/Contact" ? `${navLinksSolid}` : `${navLinks}`
