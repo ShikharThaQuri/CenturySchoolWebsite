@@ -29,7 +29,7 @@ async function GallerySection() {
 
   return (
     <div className="px-[5.5rem] bg-[#0096C7] py-[4rem]">
-      <h1 className="font-bold text-[2rem] text-[#780000] text-center mb-[2rem]">
+      <h1 className="font-bold text-[2rem] text-[white] text-center mb-[2rem]">
         School Gallary
       </h1>
 
@@ -38,7 +38,7 @@ async function GallerySection() {
           {Object.keys(data.result).map((items, i) => (
             <>
               {data.result[items].pin === true ? (
-                <div className="relative w-[26rem] h-[20rem]" key={i}>
+                <div className="relative w-[26rem] h-[18rem]" key={i}>
                   <Image
                     src={data.result[items].image_Url}
                     alt="photo"

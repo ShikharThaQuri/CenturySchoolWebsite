@@ -1,8 +1,9 @@
 import React from "react";
 
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import DeletePost from "./deletePost";
 import Link from "next/link";
+import Form from "./form";
 
 import EditIcon from "@mui/icons-material/Edit";
 
@@ -10,14 +11,31 @@ async function getData() {
   try {
     const { data } = await axios.get("http://localhost:3000/api/blog");
 
-    return data;
+    return { data: data, err: null };
   } catch (error) {
-    console.log("error");
+    const e = error as AxiosError<any>;
+    return { data: null, err: e };
   }
 }
 
 export default async function Blog() {
-  const data = await getData();
+  const { data, err } = await getData();
+
+  if (err) {
+    return (
+      <div className="py-[4rem] px-[5rem]">
+        <h1 className="text-center font-bold text-[1.5rem] mb-[3rem]">
+          Blog Form
+        </h1>
+
+        <Form />
+
+        <div className="mt-[5rem]">
+          <h1>Connection Error</h1>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="mt-[5rem]">
