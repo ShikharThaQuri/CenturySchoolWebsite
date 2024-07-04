@@ -21,7 +21,9 @@ export default function SideBar() {
       <div className="my-[1rem] text-[1.2rem] text-[#432818] font-bold leading-[3rem] ml-[0.5rem] text-[black]">
         <div className=" my-[0.5rem] flex items-center">
           <ArrowForwardIcon
-            className={` ${arrowCSS} ${slug === "All" ? "text-[2rem]" : ""} `}
+            className={` ${arrowCSS} ${
+              slug === "AllBlogs" ? "text-[2rem]" : ""
+            } `}
           />
           <Link href="/Blogs/AllBlogs" className="">
             <h1

@@ -3,6 +3,7 @@ import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Link from "next/link";
 
 const smallText = "text-[1.1rem] text-white";
 
@@ -16,18 +17,22 @@ function Footer() {
           <h1 className="text-[1.5rem] text-[white] font-bold mb-[1rem]">
             Information
           </h1>
-          <p className={smallText}>Destination</p>
-          <p className={smallText}>About Us</p>
-          <p className={smallText}>Events</p>
-          <p className={smallText}>Blog</p>
+          <p className={smallText}>
+            <Link href="/About-Us">About Us</Link>
+          </p>
+          <p className={smallText}>
+            <Link href="/Notice">Notice</Link>
+          </p>
+          <p className={smallText}>
+            <Link href="/Blogs/AllBlogs">Blog</Link>
+          </p>
         </div>
-
         <div className="ml-[5rem]">
           <h1 className="text-[1.5rem] text-[white] font-bold mb-[1rem]">
             Contact Us
           </h1>
-          <p className={smallText}>Street no:</p>
-          <p className={smallText}>Address</p>
+          <p className={smallText}>++ 9812489000</p>
+          <p className={smallText}>++ 9812489000</p>
         </div>
 
         <div className="ml-[5rem]">

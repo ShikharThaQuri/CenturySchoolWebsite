@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import Image from "next/image";
 import React, { Suspense } from "react";
 import SingleImage from "./singleImage";
@@ -10,13 +10,18 @@ async function getData(
   currentPage: number,
   imageLimit: number
 ) {
-  let getQuery = `?category=${category}&page=${currentPage}&limit=${imageLimit}`;
+  try {
+    let getQuery = `?category=${category}&page=${currentPage}&limit=${imageLimit}`;
 
-  const { data } = await axios.get(
-    `http://localhost:3000/api/images${getQuery}`
-  );
+    const { data } = await axios.get(
+      `http://localhost:3000/api/images${getQuery}`
+    );
 
-  return data;
+    return { data: data, err: null };
+  } catch (error) {
+    const e = error as AxiosError<any>;
+    return { data: null, err: e.response?.data.msg };
+  }
 }
 
 async function ImageTypePage({
@@ -32,12 +37,18 @@ async function ImageTypePage({
   const currentPage = Number(searchParams?.page) || 1;
   const imageLimit = Number(searchParams?.limit) || 10;
 
-  const data = await getData(category, currentPage, imageLimit);
+  const { data, err } = await getData(category, currentPage, imageLimit);
+
+  if (err) {
+    return (
+      <div className=" h-[50vh] flex justify-center items-center">
+        <h1 className="font-bold text-[2rem] text-[#780000] ">{err}</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="pb-[3rem]">
-      <ImageLinkPage />
-
       <Suspense key={category + currentPage} fallback={"loading..."}>
         <div className="my-[4rem] px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
           {Object.keys(data.result).map((items, i) => (

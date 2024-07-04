@@ -1,14 +1,21 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import React, { Suspense } from "react";
 // import ImageLinkPage from "../imagelinks";
 import Pagination from "./pagination";
 
 async function getData(type: string, currentPage: number, blogLimit: number) {
-  let getQuery = `?type=${type}&page=${currentPage}&limit=${blogLimit}`;
+  try {
+    let getQuery = `?type=${type}&page=${currentPage}&limit=${blogLimit}`;
 
-  const { data } = await axios.get(`http://localhost:3000/api/blog${getQuery}`);
+    const { data } = await axios.get(
+      `http://localhost:3000/api/blog${getQuery}`
+    );
 
-  return data;
+    return { data: data, err: null };
+  } catch (error) {
+    const e = error as AxiosError<any>;
+    return { data: null, err: e.response?.data.msg };
+  }
 }
 
 async function BlogTypePage({
@@ -24,11 +31,19 @@ async function BlogTypePage({
   const currentPage = Number(searchParams?.page) || 1;
   const blogLimit = Number(searchParams?.limit) || 10;
 
-  const data = await getData(type, currentPage, blogLimit);
+  const { data, err } = await getData(type, currentPage, blogLimit);
+
+  if (err) {
+    return (
+      <div className=" h-[50vh] flex justify-center items-center">
+        <h1 className="font-bold text-[2rem] text-[#780000] ">{err}</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="py-[2rem]">
-      <Suspense key={type + currentPage} fallback={"loading..."}>
+      <Suspense fallback={"loading..."}>
         {Object.keys(data.result).map((items, i) => (
           <div
             className="bg-[#FFEA9F] mx-[2rem] px-[1.5rem] pb-[1rem] mb-[2rem]"

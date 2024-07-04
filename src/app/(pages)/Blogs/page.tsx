@@ -1,18 +1,27 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import React, { Suspense } from "react";
 
 async function getData() {
   try {
     const { data } = await axios.get("http://localhost:3000/api/blog");
 
-    return data;
+    return { data: data, err: null };
   } catch (error) {
-    console.log("error");
+    const e = error as AxiosError<any>;
+    return { data: null, err: e.response?.data.msg };
   }
 }
 
 async function BlogPage() {
-  const data = await getData();
+  const { data, err } = await getData();
+
+  if (err) {
+    return (
+      <div className="h-[50vh] flex justify-center items-center">
+        <h1 className="font-bold text-[2rem] text-[#780000] ">{err}</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="py-[2rem]">
