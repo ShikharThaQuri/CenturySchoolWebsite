@@ -52,7 +52,7 @@ function Form() {
   };
 
   return (
-    <div>
+    <div className="px-[5rem]">
       <form onSubmit={submitHindelFunction}>
         <label
           htmlFor="Notice Heading"

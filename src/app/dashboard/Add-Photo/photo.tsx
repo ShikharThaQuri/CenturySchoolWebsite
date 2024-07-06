@@ -36,23 +36,21 @@ export default async function Photo() {
   }
 
   return (
-    <div className="py-[5rem] px-[1rem] flex flex-wrap justify-right gap-[0.6rem]">
-      <Suspense fallback={"Loading Images..."}>
-        {Object.keys(data.result).map((items, i) => (
-          <div className="relative w-full max-w-[20rem] h-[20rem]" key={i}>
-            <Image
-              src={data.result[items].image_Url}
-              alt="photo"
-              sizes="(max-width: 768px) 100vw, 700px"
-              fill
-              priority
-              className="border object-cover object-center relative"
-              key={i}
-            />
-            <DeleteImage singlImage={data.result[items]} />
-          </div>
-        ))}
-      </Suspense>
+    <div className="py-[5rem] flex flex-wrap justify-center gap-[0.6rem]">
+      {Object.keys(data.result).map((items, i) => (
+        <div className="relative w-full max-w-[20rem] h-[20rem]" key={i}>
+          <Image
+            src={data.result[items].image_Url}
+            alt="photo"
+            sizes="(max-width: 768px) 100vw, 700px"
+            fill
+            priority
+            className="border object-cover object-center relative"
+            key={i}
+          />
+          <DeleteImage singlImage={data.result[items]} />
+        </div>
+      ))}
     </div>
   );
 }

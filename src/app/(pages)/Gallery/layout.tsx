@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
-import Loading from "@/app/loading";
 import ImageLinkPage from "./imagelinks";
+import GalleryLoading from "./galleryLoading";
+import Loading from "@/app/loading";
 
 function BlogLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -20,6 +20,33 @@ export async function DELETE(req, { params }) {
       { status: 200 }
     );
   } catch (error) {
-    return Response.json({ success: false, msg: error }, { status: 400 });
+    return Response.json(
+      { success: false, msg: "Outside Error", error },
+      { status: 400 }
+    );
+  }
+}
+
+export async function GET(req, { params }) {
+  try {
+    try {
+      await connectDB();
+    } catch (error) {
+      return Response.json({ success: false, msg: "Connection Error" });
+    }
+
+    const imageId = params.imageId;
+
+    const result = await image.find({ _id: imageId });
+
+    return Response.json(
+      { success: true, msg: "You are successfull", result },
+      { status: 200 }
+    );
+  } catch (error) {
+    return Response.json(
+      { success: false, msg: "Outside Error", error },
+      { status: 400 }
+    );
   }
 }

@@ -3,6 +3,7 @@
 import axios, { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Loading from "@/app/loading";
 
 async function Data() {
   try {
@@ -34,11 +35,7 @@ function DashboardAuth({ children }: { children: React.ReactNode }) {
   }, [push]);
 
   if (!isSuccess) {
-    return (
-      <div className="text-center">
-        <p className="font-bold text-[2rem]">Loading....</p>
-      </div>
-    );
+    return <Loading />;
   }
 
   return <>{children}</>;

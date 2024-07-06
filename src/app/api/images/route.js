@@ -79,6 +79,7 @@ export async function GET(req) {
 
     const searchParams = req.nextUrl.searchParams;
     const categoryQuery = searchParams.get("category");
+    const pinQuery = searchParams.get("pin");
     const pageQuery = searchParams.get("page");
     const limitQuery = searchParams.get("limit");
     const sort = searchParams.get("sort");
@@ -87,6 +88,9 @@ export async function GET(req) {
 
     if (categoryQuery) {
       queryObject.category = categoryQuery;
+    }
+    if (pinQuery === "true") {
+      queryObject.pin = true;
     }
 
     let Result = images.find(queryObject);

@@ -1,13 +1,13 @@
 import React, { Suspense } from "react";
 import SideBar from "./sideBar";
-import Loading from "@/app/loading";
+import BlogLoading from "./blogLoading";
 
 function BlogLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div className="bg-[#D5BDAF] pl-[25rem] relative">
         <SideBar />
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Suspense fallback={<BlogLoading />}>{children}</Suspense>
       </div>
     </>
   );

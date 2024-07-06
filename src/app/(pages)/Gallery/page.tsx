@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { Suspense } from "react";
 
 import axios, { AxiosError } from "axios";
-import SingleImage from "./singleImage";
+import Link from "next/link";
 
 async function getData() {
   try {
@@ -29,8 +29,8 @@ async function GalleryPage() {
   return (
     <div className="pb-[3rem]">
       <div className="my-[4rem]  px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
-        <Suspense fallback={"Loading Images..."}>
-          {Object.keys(data.result).map((items, i) => (
+        {Object.keys(data.result).map((items, i) => (
+          <Link key={i} href={`/${data.result[items]._id}`}>
             <div className="relative w-full max-w-[20rem] h-[20rem]" key={i}>
               <Image
                 src={data.result[items].image_Url}
@@ -41,11 +41,9 @@ async function GalleryPage() {
                 className="border object-cover object-center relative "
                 key={i}
               />
-
-              <SingleImage singlImage={data.result[items]} keys={i} />
             </div>
-          ))}
-        </Suspense>
+          </Link>
+        ))}
       </div>
     </div>
   );

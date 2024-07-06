@@ -1,8 +1,7 @@
 import { Suspense } from "react";
-import EventsSection from "./homeComponents/eventsSection";
 import FirstSection from "./homeComponents/firstSection";
 import FourthSection from "./homeComponents/fourthSection";
-import GallerySection from "./homeComponents/gallerySection";
+import GallerySection from "./homeComponents/gallerySection/gallerySection";
 import MapSection from "./homeComponents/mapSection";
 import SecondSection from "./homeComponents/secondSection";
 import TeacherSection from "./homeComponents/teacherSection";
@@ -16,11 +15,10 @@ export default function Home() {
       <SecondSection />
       <ThirdSection />
       <FourthSection />
-      <Suspense fallback={<Loading />}>
-        <GallerySection />
-      </Suspense>
+
+      <GallerySection />
+
       <TeacherSection />
-      {/* <EventsSection /> */}
       <MapSection />
     </>
   );

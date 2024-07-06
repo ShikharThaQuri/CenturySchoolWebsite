@@ -1,7 +1,8 @@
+import React from "react";
 import axios, { AxiosError } from "axios";
+
+import Link from "next/link";
 import Image from "next/image";
-import React, { Suspense } from "react";
-import DeleteImage from "./deleteImage";
 
 async function getData() {
   try {
@@ -16,28 +17,22 @@ async function getData() {
   }
 }
 
-export default async function Pin() {
+export default async function Gallery() {
   const { data, err } = await getData();
 
   if (err) {
     return (
-      <div className="py-[4rem] px-[5rem]">
-        <h1 className="text-center text-[1.5rem] text-[#c1121f] font-bold pt-[1rem]">
-          Pin Images
-        </h1>
-
-        <div className="mt-[5rem]">
-          <h1>{err}</h1>
-        </div>
+      <div className=" bg-[#0096C7] h-[50vh] flex justify-center items-center">
+        <h1 className="font-bold text-[2rem] text-[#780000] ">{err}</h1>
       </div>
     );
   }
 
   return (
-    <div className="mt-[3rem] pb-[5rem] px-[1rem] flex flex-wrap justify-right gap-[0.6rem]">
-      <Suspense fallback={"Loading Pin Images..."}>
-        {Object.keys(data.result).map((items, i) => (
-          <div className="relative w-[20rem] h-[20rem]" key={i}>
+    <div className="my-[4rem] px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
+      {Object.keys(data.result).map((items, i) => (
+        <Link key={i} href={`/${data.result[items]._id}`}>
+          <div className="relative w-[26rem] h-[18rem]" key={i}>
             <Image
               src={data.result[items].image_Url}
               alt="photo"
@@ -47,10 +42,9 @@ export default async function Pin() {
               className="border object-cover object-center relative"
               key={i}
             />
-            <DeleteImage singlImage={data.result[items]} />
           </div>
-        ))}
-      </Suspense>
+        </Link>
+      ))}
     </div>
   );
 }

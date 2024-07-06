@@ -2,6 +2,7 @@ import axios, { AxiosError } from "axios";
 import React, { Suspense } from "react";
 import Notice from "./notice";
 import Loading from "@/app/loading";
+import NoticeLoading from "./noticeLoading";
 
 async function getData() {
   try {
@@ -18,7 +19,7 @@ async function NoticePage() {
   return (
     <div className="bg-[#D9D9D9] px-[11.5rem] py-[4rem]">
       <h1 className="text-[1.8rem] text-[#FF0000] font-bold">Notice</h1>
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<NoticeLoading />}>
         <Notice />
       </Suspense>
     </div>
