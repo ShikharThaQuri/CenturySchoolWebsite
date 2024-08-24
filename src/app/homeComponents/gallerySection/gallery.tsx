@@ -29,10 +29,13 @@ export default async function Gallery() {
   }
 
   return (
-    <div className="my-[4rem] px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
+    <div className="mt-[3rem] px-[1rem] tabletGallery:px-[0.5rem] flex flex-wrap justify-center gap-[0.6rem]">
       {Object.keys(data.result).map((items, i) => (
         <Link key={i} href={`/${data.result[items]._id}`}>
-          <div className="relative w-[26rem] h-[18rem]" key={i}>
+          <div
+            className="relative w-[25rem] tabletGallery:w-[20rem] h-[16rem]"
+            key={i}
+          >
             <Image
               src={data.result[items].image_Url}
               alt="photo"

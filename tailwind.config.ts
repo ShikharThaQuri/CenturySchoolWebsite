@@ -13,6 +13,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+
+      screens: {
+        // --------------------------------- Tablet Size
+        tablet: { max: "850px" },
+        tabletGallery: { max: "900px" },
+
+        // --------------------------------- Other
+        footerMedia: { max: "900px" },
+      },
     },
   },
   plugins: [],

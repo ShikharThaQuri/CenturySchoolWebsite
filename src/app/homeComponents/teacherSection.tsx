@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
 
@@ -10,9 +8,12 @@ import Link from "next/link";
 
 function TeacherSection() {
   return (
-    <div className="h-[90vh] bg-[#faedcd] px-[11.5rem] bg-[#F1FAEE] pt-[3rem] flex flex-col justify-center">
-      <div className="h-[60%] mb-[2rem]  flex justify-evenly items-center">
-        <div className="h-[100%] w-[18rem] px-[0.5rem] border relative bg-white flex flex-col justify-between items-center rounded-[0.5rem]">
+    <div className="bg-[#faedcd] px-[3rem] bg-[#F1FAEE] py-[3rem] flex flex-col justify-center">
+      <h1 className="font-bold text-[2rem] text-[black] text-center mb-[8rem]">
+        Teachers
+      </h1>
+      <div className="mb-[2rem] gap-y-[6rem]  flex justify-evenly items-center flex-wrap ">
+        <div className="h-[23rem] w-[18rem] px-[0.5rem] border relative bg-white flex flex-col justify-between items-center rounded-[0.5rem]">
           <Image
             alt="image1"
             src={profile6}
@@ -34,7 +35,7 @@ function TeacherSection() {
           </div>
         </div>
 
-        <div className="h-[100%] w-[18rem] px-[0.5rem] border relative bg-white flex flex-col justify-between items-center  rounded-[0.5rem]">
+        <div className="h-[23rem] w-[18rem] px-[0.5rem] border relative bg-white flex flex-col justify-between items-center  rounded-[0.5rem]">
           <Image
             alt="image1"
             src={profile7}
@@ -56,7 +57,7 @@ function TeacherSection() {
           </div>
         </div>
 
-        <div className="h-[100%] w-[18rem] px-[0.5rem] border relative bg-white flex flex-col justify-between items-center  rounded-[0.5rem]">
+        <div className="h-[23rem] w-[18rem] px-[0.5rem] border relative bg-white flex flex-col justify-between items-center  rounded-[0.5rem]">
           <Image
             alt="image1"
             src={profile9}
@@ -79,7 +80,7 @@ function TeacherSection() {
         </div>
       </div>
 
-      <div className="text-center mt-[2rem]">
+      <div className="text-center mt-[2rem] ">
         <Link
           href="/About-Us"
           className="bg-[#FDE773] px-[1.2rem] py-[0.5rem] font-bold text-[1.2rem]"
