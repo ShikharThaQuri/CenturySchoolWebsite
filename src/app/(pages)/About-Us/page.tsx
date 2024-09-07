@@ -8,7 +8,7 @@ import profile7 from "@/img/profile-7.jpg";
 import profile9 from "@/img/profile-9.jpg";
 
 const midColor = "flex-[1] h-[33.3rem] flex flex-col items-center pt-[3rem]";
-const midColorFont = "text-white mt-[1rem] text-[1.25rem]";
+const midColorFont = "text-white mt-[1rem] text-[1.25rem] tablet:text-[0.9rem]";
 
 const imageDes =
   "absolute -top-[15%] left-[22%]  w-[10rem] h-[10rem] rounded-[10rem] object-cover";
@@ -47,10 +47,12 @@ function AboutUsPage() {
       </div>
 
       {/* --------------------- Second Section -------------------------- */}
-      <div className="flex ">
+      <div className="flex">
         <div className={`bg-[#56C344] ${midColor}`}>
-          <h1 className="text-[2.5rem] font-bold mb-[1rem]">We Are</h1>
-          <div className="text-left">
+          <h1 className="text-[2.5rem] tablet:text-[2rem] font-bold mb-[1rem]">
+            We Are
+          </h1>
+          <div className="text-left ">
             <p className={`${midColorFont}`}>A Delicious Meal</p>
             <p className={`${midColorFont}`}>Close Firends</p>
             <p className={`${midColorFont}`}>Comfotable</p>
@@ -59,7 +61,9 @@ function AboutUsPage() {
           </div>
         </div>
         <div className={`bg-[#6872CE] ${midColor}`}>
-          <h1 className="text-[2.5rem] font-bold mb-[1rem]">We Are Not</h1>
+          <h1 className="text-[2.5rem]  tablet:text-[2rem] font-bold mb-[1rem]">
+            We Are Not
+          </h1>
           <div className="text-left">
             <p className={`${midColorFont}`}>A Delicious Meal</p>
             <p className={`${midColorFont}`}>Close Firends</p>
@@ -69,7 +73,9 @@ function AboutUsPage() {
           </div>
         </div>
         <div className={`bg-[#C84B4B] ${midColor}`}>
-          <h1 className="text-[2.5rem] font-bold mb-[1rem]">What We Offer</h1>
+          <h1 className="text-[2.5rem] tablet:text-[2rem] font-bold mb-[1rem]">
+            What We Offer
+          </h1>
           <div className="text-left">
             <p className={`${midColorFont}`}>A Delicious Meal</p>
             <p className={`${midColorFont}`}>Close Firends</p>

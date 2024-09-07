@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React, { Suspense } from "react";
 
+import Pagination from "./[slug]/pagination";
+
 import axios, { AxiosError } from "axios";
 import Link from "next/link";
 
@@ -31,7 +33,10 @@ async function GalleryPage() {
       <div className="my-[4rem]  px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
         {Object.keys(data.result).map((items, i) => (
           <Link key={i} href={`/${data.result[items]._id}`}>
-            <div className="relative w-full max-w-[20rem] h-[20rem]" key={i}>
+            <div
+              className="relative w-full min-w-[20rem] max-w-[20rem] h-[20rem]"
+              key={i}
+            >
               <Image
                 src={data.result[items].image_Url}
                 alt="photo"
@@ -45,6 +50,7 @@ async function GalleryPage() {
           </Link>
         ))}
       </div>
+      <Pagination data={data} />
     </div>
   );
 }

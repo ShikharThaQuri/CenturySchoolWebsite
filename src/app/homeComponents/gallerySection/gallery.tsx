@@ -13,6 +13,7 @@ async function getData() {
     return { data: data, err: null };
   } catch (error) {
     const e = error as AxiosError<any>;
+    console.log("hello", e.response);
     return { data: null, err: e.response?.data.msg };
   }
 }
@@ -23,7 +24,7 @@ export default async function Gallery() {
   if (err) {
     return (
       <div className=" bg-[#0096C7] h-[50vh] flex justify-center items-center">
-        <h1 className="font-bold text-[2rem] text-[#780000] ">{err}</h1>
+        <h1 className="font-bold text-[2rem] text-[#780000] ">Error Happend</h1>
       </div>
     );
   }

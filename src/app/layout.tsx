@@ -31,7 +31,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
-        <div className="h-[5vh] flex justify-center items-center bg-[#F1FAEE]">
+        <div className="h-[5vh] flex justify-center items-center bg-[#F1FAEE] max700:hidden">
           <span className="font-bold mr-[0.4rem]">
             Century Education Academy
           </span>

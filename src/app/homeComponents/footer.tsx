@@ -9,11 +9,11 @@ const smallText = "text-[1rem] footerMedia:text-[0.8rem] text-white";
 
 function Footer() {
   return (
-    <div className="bg-[#1b263b] px-[11.5rem] footerMedia:px-[5rem] py-[3.5rem] flex justify-between ">
-      <h1>Logo</h1>
+    <div className="bg-[#1b263b] px-[11.5rem] footerMedia:px-[5rem] py-[3.5rem] flex  justify-between max700:justify-center ">
+      <h1 className="max700:hidden">Logo</h1>
 
-      <div className="flex">
-        <div className="ml-[5rem]">
+      <div className="flex max400:flex-col max400:gap-y-[2.5rem]">
+        <div className="ml-[5rem] max700:hidden">
           <h1 className="text-[1.5rem] footerMedia:text-[1.2rem] text-[white] font-bold mb-[1rem]">
             Information
           </h1>
@@ -29,19 +29,19 @@ function Footer() {
             </p>
           </div>
         </div>
-        <div className="ml-[5rem]">
-          <h1 className="text-[1.5rem] footerMedia:text-[1.2rem] text-[white] font-bold mb-[1rem]">
+        <div className="ml-[5rem] max700:ml-[0]">
+          <h1 className="text-[1.5rem] max400:text-[1.5rem] footerMedia:text-[1.2rem] text-[white] font-bold mb-[1rem]">
             Contact Us
           </h1>
 
-          <div className="flex flex-col gap-y-[0.5rem]">
+          <div className="flex flex-col gap-y-[0.5rem] max400:items-center">
             <p className={smallText}>++ 9812489000</p>
             <p className={smallText}>++ 9812489000</p>
           </div>
         </div>
 
-        <div className="ml-[5rem]">
-          <h1 className="text-[1.5rem] footerMedia:text-[1.2rem] text-[white] font-bold mb-[1rem]">
+        <div className="ml-[5rem] max400:ml-[0]">
+          <h1 className="text-[1.5rem]  max400:text-[1.5rem] footerMedia:text-[1.2rem] text-[white] font-bold mb-[1rem]">
             Socal Links
           </h1>
           <div className="flex justify-evenly">

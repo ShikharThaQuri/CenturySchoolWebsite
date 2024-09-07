@@ -4,7 +4,7 @@ import CoverImage from "@/img/cover-photo.jpg";
 
 function ThirdSection() {
   return (
-    <div className="w-full h-[95vh] relative">
+    <div className="w-full h-[95vh]  tablet:h-[70vh] max700:h-[50vh] max400:h-[45vh] relative">
       <Image
         alt="cover Photo"
         src={CoverImage}

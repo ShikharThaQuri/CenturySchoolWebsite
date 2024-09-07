@@ -17,7 +17,7 @@ async function GallerySection() {
 
       <div className="text-center mt-[2.5rem]">
         <Link
-          href="/Gallery"
+          href="/Gallery/AllGallery"
           className="bg-[#FDE773] px-[1.2rem] py-[0.5rem] font-bold text-[1.2rem]"
         >
           View More

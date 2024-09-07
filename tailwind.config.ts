@@ -21,6 +21,9 @@ const config: Config = {
 
         // --------------------------------- Other
         footerMedia: { max: "900px" },
+
+        max700: { max: "700px" },
+        max400: { max: "400px" },
       },
     },
   },
