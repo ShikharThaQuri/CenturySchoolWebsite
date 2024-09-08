@@ -52,7 +52,7 @@ function Form() {
   };
 
   return (
-    <div className="px-[5rem]">
+    <div className="px-[5rem]  tablet:px-[1rem]">
       <form onSubmit={submitHindelFunction}>
         <label
           htmlFor="Notice Heading"
@@ -108,7 +108,7 @@ function Form() {
           />
         </div>
 
-        <div className="text-center my-[3rem]">
+        <div className="text-center my-[3rem] tablet:flex tablet:flex-col tablet:gap-y-[2rem] tablet:items-center">
           <input
             // className="hidden"
             type="file"
@@ -118,7 +118,7 @@ function Form() {
           />
           <label
             htmlFor="uploadImg"
-            className="text-center bg-[#c0392b] text-white font-bold px-[2rem] py-[0.9rem] rounded cursor-pointer"
+            className="text-center bg-[#c0392b] w-[15rem] text-white font-bold px-[2rem] py-[0.9rem] rounded cursor-pointer"
           >
             <UploadIcon className="mr-[0.4rem]" />
             {loading ? "UPLOADING..." : "UPLOAD IMAGE"}

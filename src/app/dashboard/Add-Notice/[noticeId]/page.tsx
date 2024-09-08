@@ -50,7 +50,7 @@ function EditNoticePage({ params }: { params: { noticeId: string } }) {
   }, []);
 
   return (
-    <div className="px-[5rem] py-[5rem]">
+    <div className="px-[5rem] py-[5rem] tablet:px-[1.5rem]">
       <div className="text-center mb-[3rem]">
         <h1 className="text-[1.5rem] font-bold">Update Notice</h1>
       </div>

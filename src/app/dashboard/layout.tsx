@@ -6,7 +6,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <DashboardAuth>
-        <div className="pl-[11.5rem] bg-[#D5BDAF] relative">
+        <div className="pl-[11.5rem] max700:pl-[9.5rem] bg-[#D5BDAF] relative">
           <SideBar />
           {children}
         </div>

@@ -37,7 +37,10 @@ export default async function Pin() {
     <div className="mt-[3rem] pb-[5rem] px-[1rem] flex flex-wrap justify-right gap-[0.6rem]">
       <Suspense fallback={"Loading Pin Images..."}>
         {Object.keys(data.result).map((items, i) => (
-          <div className="relative w-[20rem] h-[20rem]" key={i}>
+          <div
+            className="relative w-[20rem] tablet:w-[12rem] max700:w-[8rem] h-[20rem] tablet:h-[12rem] max700:h-[8rem]"
+            key={i}
+          >
             <Image
               src={data.result[items].image_Url}
               alt="photo"

@@ -34,7 +34,7 @@ export default async function SingleImage({ imageId }: { imageId: string }) {
 
   return (
     <>
-      <div className="relative w-[80%] h-[30rem] rounded-[1rem] object-cover object-center my-[0.5rem] z-[100]">
+      <div className="relative w-[80%] h-[30rem] max700:h-[20rem] max400:h-[15rem] rounded-[1rem] object-cover object-center my-[0.5rem] z-[100]">
         <Image
           src={data.result[0].image_Url}
           alt="photo"

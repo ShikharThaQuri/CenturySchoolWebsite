@@ -29,13 +29,15 @@ export default async function Notice() {
           <div key={i}>
             {data.result[items].type === "Pin" ? (
               <div
-                className="bg-[#fb6f92] py-[1.5rem] px-[1.5rem]  my-[1.5rem]"
+                className="bg-[#fb6f92] py-[1.5rem] max700:py-[0.8rem] px-[1.5rem] max700:px-[0.8rem]  my-[1.5rem]"
                 key={i}
               >
                 <h1 key={i} className="text-[1.25rem] font-bold mb-[0.5rem]">
                   {data.result[items].noticeTitle}
                 </h1>
-                <p className="ml-[1rem]">{data.result[items].disc}</p>
+                <p className="ml-[1rem] text-justify">
+                  {data.result[items].disc}
+                </p>
                 <div className="flex justify-end mt-[0.4rem]">
                   <p
                     key={i}
@@ -58,13 +60,15 @@ export default async function Notice() {
           <div key={i}>
             {data.result[items].type === "Normal" ? (
               <div
-                className="bg-[#9f86c0] py-[1.5rem] px-[1.5rem]  my-[1.5rem]"
+                className="bg-[#9f86c0] py-[1.5rem] max700:py-[0.8rem] px-[1.5rem] max700:px-[0.8rem]  my-[1.5rem]"
                 key={i}
               >
                 <h1 key={i} className="text-[1.25rem] font-bold mb-[0.5rem]">
                   {data.result[items].noticeTitle}
                 </h1>
-                <p className="ml-[1rem]">{data.result[items].disc}</p>
+                <p className="ml-[1rem] text-justify">
+                  {data.result[items].disc}
+                </p>
                 <div className="flex justify-end mt-[0.4rem]">
                   <p
                     key={i}

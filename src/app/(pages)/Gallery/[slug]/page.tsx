@@ -52,7 +52,7 @@ async function ImageTypePage({
         {Object.keys(data.result).map((items, i) => (
           <Link key={i} href={`/${data.result[items]._id}`}>
             <div
-              className="relative w-full min-w-[20rem] max-w-[20rem] h-[20rem] hover:opacity-80"
+              className="relative w-full min-w-[20rem] max700:min-w-[12rem]  max700:max-w-[12rem]  max-w-[20rem] h-[20rem] max700:h-[12rem] hover:opacity-80"
               key={i}
             >
               <Image

@@ -15,10 +15,12 @@ export default function SideBar() {
   const type = searchParams.get("type");
 
   return (
-    <div className="py-[1rem] px-[1rem] mt-[1rem] w-full bg-[#f4a261] max-w-[20rem] absolute top-[1rem] left-[3rem] bg-[#D9D9D9]">
-      <h1 className="text-[1.5rem] font-bold text-[red]">Categories</h1>
-      <hr className="border-black mt-[0.5rem] border-[0.15rem]" />
-      <div className="my-[1rem] text-[1.2rem] text-[#432818] font-bold leading-[3rem] ml-[0.5rem] text-[black]">
+    <div className="py-[1rem] px-[1rem] mt-[1rem] tablet:mt-[0] w-full bg-[#f4a261] max-w-[20rem] tablet:max-w-full absolute tablet:static top-[1rem] left-[3rem] bg-[#D9D9D9]">
+      <h1 className="text-[1.5rem] tablet:text-[1.8rem] font-bold text-[red] ">
+        Categories
+      </h1>
+      <hr className="border-black mt-[0.5rem] tablet:mt-[1rem] border-[0.15rem]" />
+      <div className="my-[1rem] text-[1.2rem] text-[#432818] font-bold leading-[3rem] ml-[0.5rem] text-[black] tablet:flex tablet:gap-x-[2rem] tablet:flex-wrap">
         <div className=" my-[0.5rem] flex items-center">
           <ArrowForwardIcon
             className={` ${arrowCSS} ${

@@ -7,7 +7,8 @@ import profile6 from "@/img/profile-6.jpg";
 import profile7 from "@/img/profile-7.jpg";
 import profile9 from "@/img/profile-9.jpg";
 
-const midColor = "flex-[1] h-[33.3rem] flex flex-col items-center pt-[3rem]";
+const midColor =
+  "flex-[1] tablet:flex-[100%] h-[auto] flex flex-col items-center py-[3rem]";
 const midColorFont = "text-white mt-[1rem] text-[1.25rem] tablet:text-[0.9rem]";
 
 const imageDes =
@@ -19,14 +20,32 @@ function AboutUsPage() {
   return (
     <div className="">
       {/* --------------------- First Section -------------------------- */}
-      <div className="flex justify-evenly items-center py-[5rem]">
-        <div>
-          <h1 className="text-[1.5rem] font-bold">Aayush Kumar Thakur</h1>
-          <p className="text-[1.25rem] font-bold text-[#424141]">Principle</p>
+      <div className="flex tablet:flex-col justify-evenly items-center py-[5rem]">
+        <div className="text-center">
+          <Image
+            src={eventPhoto2}
+            alt="About-us-school-Photo"
+            className="w-[20.5rem] tablet:w-[20rem] h-[32rem] tablet:h-[18rem] object-cover object-center hidden tablet:block"
+          />
+          <h1 className="text-[1.5rem] font-bold hidden tablet:block tablet:text-[#f44336]">
+            Aayush Kumar Thakur
+          </h1>
+          <p className="text-[1.25rem] font-bold text-[#424141] hidden tablet:block">
+            Principle
+          </p>
+        </div>
+
+        <div className="tablet:mx-[5rem] ">
+          <h1 className="text-[1.5rem] font-bold tablet:hidden">
+            Aayush Kumar Thakur
+          </h1>
+          <p className="text-[1.25rem] font-bold text-[#424141] tablet:hidden">
+            Principle
+          </p>
           <h1 className="text-[4rem] font-bold mt-[1.5rem] text-[#f44336]">
             WHY US
           </h1>
-          <p className="w-[32.5rem] font-[1.1rem] text-justify">
+          <p className="w-[32.5rem] tablet:w-[100%] font-[1.1rem] text-justify">
             Students have ready access to both academic enrichment and support,
             as well as to an inviting range of opportunities for social
             interactions, artistic expression, service learning, and athletics.
@@ -37,17 +56,18 @@ function AboutUsPage() {
             access to both academic enrichment.
           </p>
         </div>
+
         <div>
           <Image
             src={eventPhoto2}
             alt="About-us-school-Photo"
-            className="w-[20.5rem] h-[32rem] object-cover object-center"
+            className="w-[20.5rem] tablet:w-[15rem] h-[32rem] tablet:h-[25rem] object-cover object-center tablet:hidden"
           />
         </div>
       </div>
 
       {/* --------------------- Second Section -------------------------- */}
-      <div className="flex">
+      <div className="flex flex-wrap">
         <div className={`bg-[#56C344] ${midColor}`}>
           <h1 className="text-[2.5rem] tablet:text-[2rem] font-bold mb-[1rem]">
             We Are
@@ -87,21 +107,32 @@ function AboutUsPage() {
       </div>
 
       {/* --------------------- Third Section -------------------------- */}
-      <div className="flex justify-evenly items-center py-[5rem]">
-        <div>
+      <div className="flex tablet:flex-col justify-evenly items-center py-[5rem]">
+        <div className="text-center">
           <Image
             src={eventPhoto2}
             alt="About-us-school-Photo"
-            className="w-[20.5rem] h-[32rem] object-cover object-center"
+            className="w-[20.5rem] tablet:w-[20rem] h-[32rem] tablet:h-[18rem] object-cover object-center"
           />
+          <h1 className="text-[1.5rem] font-bold hidden tablet:block tablet:text-[#f44336]">
+            Lokendra Magar
+          </h1>
+          <p className="text-[1.25rem] font-bold text-[#424141] hidden tablet:block">
+            Founder
+          </p>
         </div>
-        <div>
-          <h1 className="text-[1.5rem] font-bold">Lokendra Magar</h1>
-          <p className="text-[1.25rem] font-bold text-[#424141]">Founder</p>
+
+        <div className="tablet:mx-[5rem] ">
+          <h1 className="text-[1.5rem] font-bold tablet:hidden">
+            Lokendra Magar
+          </h1>
+          <p className="text-[1.25rem] font-bold text-[#424141] tablet:hidden">
+            Founder
+          </p>
           <h1 className="text-[4rem] font-bold mt-[1.5rem]  text-[#f44336]">
             History
           </h1>
-          <p className="w-[32.5rem] font-[1.1rem] text-justify">
+          <p className="w-[32.5rem] tablet:w-[100%] font-[1.1rem] text-justify">
             Students have ready access to both academic enrichment and support,
             as well as to an inviting range of opportunities for social
             interactions, artistic expression, service learning, and athletics.
@@ -116,7 +147,7 @@ function AboutUsPage() {
 
       {/* -------------------------- Teacher Section ------------------------- */}
 
-      <section className=" px-[5rem] py-[4rem] bg-[#ffe5ec] ">
+      <section className=" px-[5rem] tablet:px-[2rem] py-[4rem] bg-[#ffe5ec] ">
         <h1 className="text-center mb-[2rem] font-bold text-[2rem]  text-[#ff6700]">
           Our Staffs
         </h1>

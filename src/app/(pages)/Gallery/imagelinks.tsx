@@ -5,7 +5,7 @@ import React from "react";
 import { useParams, useSearchParams } from "next/navigation";
 
 const linkdign =
-  "text-[1.2rem] px-[1.7rem] py-[0.65rem] rounded-[1rem] mx-[0.1rem]";
+  "text-[1.2rem] max700:text-[0.8rem] px-[1.7rem] py-[0.65rem] rounded-[1rem] mx-[0.1rem]";
 
 function ImageLinkPage() {
   const { slug } = useParams();
@@ -14,7 +14,7 @@ function ImageLinkPage() {
   const category = searchParams.get("category");
 
   return (
-    <div className="px-[6rem] text-white">
+    <div className="px-[6rem] tablet:px-[2rem] text-white">
       <Link href="/Gallery/AllGallery">
         <button
           className={` ${

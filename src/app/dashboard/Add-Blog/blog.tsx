@@ -41,14 +41,14 @@ export default async function Blog() {
     <div className="mt-[5rem]">
       {Object.keys(data.result).map((items, i) => (
         <div
-          className="flex justify-between items-center mb-[1.5rem] px-[1rem] py-[1rem] bg-white"
+          className="flex justify-between items-center mb-[1.5rem] px-[1rem] py-[1rem] max700:p-[0.5rem] bg-white"
           key={i}
         >
-          <h1 className="text-[1.3rem] font-bold" key={i}>
+          <h1 className="text-[1.3rem] max700:text-[0.8rem] font-bold" key={i}>
             {data.result[items].writerName}
           </h1>
           <div className="flex items-center">
-            <h1 className="w-[5rem] text-nowrap overflow-hidden">
+            <h1 className="w-[5rem] text-nowrap overflow-hidden max700:hidden">
               {data.result[items].createdAt}
             </h1>
             <Link

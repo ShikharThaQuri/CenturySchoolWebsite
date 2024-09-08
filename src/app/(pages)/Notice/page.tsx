@@ -17,7 +17,7 @@ async function getData() {
 
 async function NoticePage() {
   return (
-    <div className="bg-[#D9D9D9] px-[11.5rem] py-[4rem]">
+    <div className="bg-[#D9D9D9] px-[11.5rem] tablet:px-[2rem] py-[4rem]">
       <h1 className="text-[1.8rem] text-[#FF0000] font-bold">Notice</h1>
       <Suspense fallback={<NoticeLoading />}>
         <Notice />

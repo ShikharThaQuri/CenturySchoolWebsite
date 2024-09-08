@@ -7,7 +7,7 @@ function SideBar() {
   const pathname = usePathname();
 
   const sideDesign =
-    "pr-[2rem] pl-[1rem] py-[0.7rem] my-[0.5rem] text-[1.3rem] font-bold rounded-l-[2rem]";
+    "pr-[2rem] pl-[1rem] py-[0.7rem] my-[0.5rem] text-[1.3rem] max700:text-[0.8rem] font-bold rounded-l-[2rem]";
 
   return (
     <div className="pl-[2rem] pt-[5rem] absolute top-0 bottom-0 left-0 bg-[#D9D9D9]">

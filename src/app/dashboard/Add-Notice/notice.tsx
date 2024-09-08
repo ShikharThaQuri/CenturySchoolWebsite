@@ -40,10 +40,10 @@ export default async function Notice() {
     <div className="mt-[5rem]">
       {Object.keys(data.result).map((items, i) => (
         <div
-          className="flex justify-between items-center mb-[1.5rem] px-[1rem] py-[1rem] bg-white"
+          className="flex justify-between items-center mb-[1.5rem] px-[1rem] max700:p-[0.5rem] py-[1rem] bg-white"
           key={i}
         >
-          <h1 className="text-[1.3rem] font-bold" key={i}>
+          <h1 className="text-[1.3rem] max700:text-[0.8rem] font-bold" key={i}>
             {data.result[items].noticeTitle}
           </h1>
           <div>

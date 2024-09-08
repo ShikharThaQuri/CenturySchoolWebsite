@@ -38,7 +38,10 @@ export default async function Photo() {
   return (
     <div className="py-[5rem] flex flex-wrap justify-center gap-[0.6rem]">
       {Object.keys(data.result).map((items, i) => (
-        <div className="relative w-full max-w-[20rem] h-[20rem]" key={i}>
+        <div
+          className="relative w-full max-w-[20rem] tablet:max-w-[12rem] max700:max-w-[8rem] h-[20rem] tablet:h-[12rem] max700:h-[8rem]"
+          key={i}
+        >
           <Image
             src={data.result[items].image_Url}
             alt="photo"
