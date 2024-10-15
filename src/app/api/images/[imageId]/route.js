@@ -1,5 +1,6 @@
 const connectDB = require("@/db/connect");
 const image = require("@/models/image");
+import { deleteImage } from "@/lib/delete_image";
 
 export async function DELETE(req, { params }) {
   try {
@@ -15,8 +16,14 @@ export async function DELETE(req, { params }) {
       );
     }
 
+    await deleteImage(deletedNotice.public_id);
+
     return Response.json(
-      { success: true, msg: "Notice Successfully Deleted", deletedNotice },
+      {
+        success: true,
+        msg: "Notice Successfully Deleted",
+        deletedNotice,
+      },
       { status: 200 }
     );
   } catch (error) {
