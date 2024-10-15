@@ -21,7 +21,7 @@ export async function DELETE(req, { params }) {
     );
   } catch (error) {
     return Response.json(
-      { success: false, msg: "Outside Error", error },
+      { success: false, msg: "Error", error },
       { status: 400 }
     );
   }
@@ -32,7 +32,7 @@ export async function GET(req, { params }) {
     try {
       await connectDB();
     } catch (error) {
-      return Response.json({ success: false, msg: "Connection Error" });
+      return Response.json({ success: false, msg: "Data Connection Error" });
     }
 
     const imageId = params.imageId;
@@ -45,7 +45,7 @@ export async function GET(req, { params }) {
     );
   } catch (error) {
     return Response.json(
-      { success: false, msg: "Outside Error", error },
+      { success: false, msg: "Error", error },
       { status: 400 }
     );
   }

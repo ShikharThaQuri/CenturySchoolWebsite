@@ -18,6 +18,9 @@ export async function GET(req) {
       { status: 200 }
     );
   } catch (error) {
-    return Response.json({ success: false, msg: error }, { status: 400 });
+    return Response.json(
+      { success: false, msg: "Error", error },
+      { status: 400 }
+    );
   }
 }

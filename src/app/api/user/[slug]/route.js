@@ -15,7 +15,7 @@ export async function POST(req, { params }) {
       await connectDB();
     } catch (error) {
       return Response.json(
-        { success: false, msg: "Connection Error" },
+        { success: false, msg: "Data Connection Error" },
         { status: 404 }
       );
     }
@@ -98,7 +98,10 @@ export async function POST(req, { params }) {
         );
     }
   } catch (error) {
-    return Response.json({ success: false, msg: error }, { status: 400 });
+    return Response.json(
+      { success: false, msg: "Error", error },
+      { status: 400 }
+    );
   }
 }
 
@@ -108,7 +111,7 @@ export async function GET(req, { params }) {
       await connectDB();
     } catch (error) {
       return Response.json(
-        { success: false, msg: "connection Error" },
+        { success: false, msg: "Data connection Error" },
         { status: 400 }
       );
     }
@@ -151,6 +154,9 @@ export async function GET(req, { params }) {
         return Response.json({ success: false, msg: "Route Does not Found." });
     }
   } catch (error) {
-    return Response.json({ success: false, msg: error }, { status: 400 });
+    return Response.json(
+      { success: false, msg: "Error", error },
+      { status: 400 }
+    );
   }
 }

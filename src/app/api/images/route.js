@@ -9,7 +9,7 @@ export async function POST(req) {
       await connectDB();
     } catch (error) {
       return Response.json(
-        { success: false, msg: "Connection Error" },
+        { success: false, msg: "Data Connection Error" },
         { status: 400 }
       );
     }
@@ -62,7 +62,10 @@ export async function POST(req) {
       { status: 201 }
     );
   } catch (error) {
-    return Response.json({ success: false, msg: error }, { status: 400 });
+    return Response.json(
+      { success: false, error, msg: "Error" },
+      { status: 400 }
+    );
   }
 }
 
@@ -72,7 +75,7 @@ export async function GET(req) {
       await connectDB();
     } catch (error) {
       return Response.json(
-        { success: false, msg: "Connection Error" },
+        { success: false, msg: "Data Connection Error" },
         { status: 404 }
       );
     }
@@ -121,6 +124,9 @@ export async function GET(req) {
       { status: 200 }
     );
   } catch (error) {
-    return Response.json({ success: false, msg: error }, { status: 400 });
+    return Response.json(
+      { success: false, error, msg: "Error" },
+      { status: 400 }
+    );
   }
 }

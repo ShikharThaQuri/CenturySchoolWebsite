@@ -21,18 +21,16 @@ function AboutUsPage() {
     <div className="">
       {/* --------------------- First Section -------------------------- */}
       <div className="flex tablet:flex-col justify-evenly items-center py-[5rem]">
-        <div className="text-center">
+        <div className="text-center hidden tablet:block">
           <Image
             src={eventPhoto2}
             alt="About-us-school-Photo"
-            className="w-[20.5rem] tablet:w-[20rem] h-[32rem] tablet:h-[18rem] object-cover object-center hidden tablet:block"
+            className="w-[20.5rem] tablet:w-[20rem] h-[32rem] tablet:h-[18rem] object-cover object-center "
           />
-          <h1 className="text-[1.5rem] font-bold hidden tablet:block tablet:text-[#f44336]">
+          <h1 className="text-[1.5rem] font-bold  tablet:text-[#f44336]">
             Aayush Kumar Thakur
           </h1>
-          <p className="text-[1.25rem] font-bold text-[#424141] hidden tablet:block">
-            Principle
-          </p>
+          <p className="text-[1.25rem] font-bold text-[#424141] ">Principle</p>
         </div>
 
         <div className="tablet:mx-[5rem] ">
@@ -57,11 +55,11 @@ function AboutUsPage() {
           </p>
         </div>
 
-        <div>
+        <div className="tablet:hidden">
           <Image
             src={eventPhoto2}
             alt="About-us-school-Photo"
-            className="w-[20.5rem] tablet:w-[15rem] h-[32rem] tablet:h-[25rem] object-cover object-center tablet:hidden"
+            className="w-[20.5rem] tablet:w-[15rem] h-[32rem] tablet:h-[25rem] object-cover object-center "
           />
         </div>
       </div>
@@ -108,18 +106,24 @@ function AboutUsPage() {
 
       {/* --------------------- Third Section -------------------------- */}
       <div className="flex tablet:flex-col justify-evenly items-center py-[5rem]">
-        <div className="text-center">
+        <div className="text-center hidden tablet:block">
           <Image
             src={eventPhoto2}
             alt="About-us-school-Photo"
             className="w-[20.5rem] tablet:w-[20rem] h-[32rem] tablet:h-[18rem] object-cover object-center"
           />
-          <h1 className="text-[1.5rem] font-bold hidden tablet:block tablet:text-[#f44336]">
+          <h1 className="text-[1.5rem] font-bold  tablet:text-[#f44336]">
             Lokendra Magar
           </h1>
-          <p className="text-[1.25rem] font-bold text-[#424141] hidden tablet:block">
-            Founder
-          </p>
+          <p className="text-[1.25rem] font-bold text-[#424141] ">Founder</p>
+        </div>
+
+        <div className="tablet:hidden">
+          <Image
+            src={eventPhoto2}
+            alt="About-us-school-Photo"
+            className="w-[20.5rem] tablet:w-[20rem] h-[32rem] tablet:h-[18rem] object-cover object-center"
+          />
         </div>
 
         <div className="tablet:mx-[5rem] ">

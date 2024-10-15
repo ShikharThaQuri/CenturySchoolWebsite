@@ -9,7 +9,7 @@ export async function POST(req) {
       return Response.json(
         {
           success: false,
-          msg: "something is wrong in database.",
+          msg: "Data connection Error",
         },
         { status: 400 }
       );
@@ -54,7 +54,10 @@ export async function POST(req) {
       { status: 201 }
     );
   } catch (error) {
-    return Response.json({ success: false, msg: error }, { status: 400 });
+    return Response.json(
+      { success: false, msg: "Error", error },
+      { status: 400 }
+    );
   }
 }
 
@@ -68,6 +71,9 @@ export async function GET(req) {
       { status: 202 }
     );
   } catch (error) {
-    return Response.json({ success: false, msg: error }, { status: 400 });
+    return Response.json(
+      { success: false, msg: "Error", error },
+      { status: 400 }
+    );
   }
 }
