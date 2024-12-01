@@ -41,7 +41,7 @@ export default async function SingleImage({ imageId }: { imageId: string }) {
           sizes="(max-width: 768px) 100vw, 700px"
           fill
           priority
-          className="border object-fit object-center"
+          className="border object-cover object-center"
         />
       </div>
       <div className="mb-[1rem] mt-[2rem]">
