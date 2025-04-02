@@ -6,6 +6,17 @@ import Pagination from "./[slug]/pagination";
 import axios, { AxiosError } from "axios";
 import Link from "next/link";
 
+type Data = {
+  _id: string;
+  imageDis: string;
+  image_Url: string;
+  public_id: string;
+  pin: boolean;
+  category: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
 async function getData() {
   try {
     const { data } = await axios.get("http://localhost:3000/api/images");
@@ -20,6 +31,8 @@ async function getData() {
 async function GalleryPage() {
   const { data, err } = await getData();
 
+  // console.log(data);
+
   if (err) {
     return (
       <div className=" h-[50vh] flex justify-center items-center">
@@ -31,8 +44,8 @@ async function GalleryPage() {
   return (
     <div className="pb-[3rem]">
       <div className="my-[4rem]  px-[1rem] flex flex-wrap justify-center gap-[0.6rem]">
-        {Object.keys(data.result).map((items, i) => (
-          <Link key={i} href={`/${data.result[items]._id}`}>
+        {Object.keys(data.result as Data).map((items, i) => (
+          <Link key={i} href={`/Gallery/AllGallery/${data.result[items]._id}`}>
             <div
               className="relative w-full min-w-[20rem] max700:min-w-[12rem]  max700:max-w-[12rem]  max-w-[20rem] h-[20rem] max700:h-[12rem]  hover:opacity-80"
               key={i}

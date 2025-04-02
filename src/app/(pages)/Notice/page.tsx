@@ -3,17 +3,11 @@ import React, { Suspense } from "react";
 import Notice from "./notice";
 import Loading from "@/app/loading";
 import NoticeLoading from "./noticeLoading";
+import { Metadata } from "next";
 
-async function getData() {
-  try {
-    const { data } = await axios.get("http://localhost:3000/api/notice");
-
-    return { data: data, err: null };
-  } catch (error) {
-    const e = error as AxiosError<any>;
-    return { data: null, err: e.response?.data.msg };
-  }
-}
+export const metadata: Metadata = {
+  title: "Notice",
+};
 
 async function NoticePage() {
   return (

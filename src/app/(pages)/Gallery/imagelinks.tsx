@@ -15,7 +15,7 @@ function ImageLinkPage() {
 
   return (
     <div className="px-[6rem] tablet:px-[2rem] text-white">
-      <Link href="/Gallery/AllGallery">
+      <Link href="/Gallery">
         <button
           className={` ${
             slug === "AllGallery"

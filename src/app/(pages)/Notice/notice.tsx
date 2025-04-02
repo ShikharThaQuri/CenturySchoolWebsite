@@ -1,6 +1,15 @@
 import axios, { AxiosError } from "axios";
 import React from "react";
 
+type Data = {
+  _id: string;
+  noticeTitle: string;
+  disc: string;
+  type: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
 async function getData() {
   try {
     const { data } = await axios.get("http://localhost:3000/api/notice");
@@ -14,6 +23,8 @@ async function getData() {
 export default async function Notice() {
   const { data, err } = await getData();
 
+  // console.log(data.result);
+
   if (err) {
     return (
       <div className="h-[50vh] flex justify-center items-center">
@@ -25,7 +36,7 @@ export default async function Notice() {
   return (
     <>
       <div>
-        {Object.keys(data.result).map((items, i) => (
+        {Object.keys(data.result as Data).map((items, i) => (
           <div key={i}>
             {data.result[items].type === "Pin" ? (
               <div

@@ -47,7 +47,7 @@ function EditNoticePage({ params }: { params: { noticeId: string } }) {
         console.log(error);
       }
     })();
-  }, []);
+  }, [params.noticeId]);
 
   return (
     <div className="px-[5rem] py-[5rem] tablet:px-[1.5rem]">

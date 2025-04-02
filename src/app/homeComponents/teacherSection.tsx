@@ -23,8 +23,9 @@ function TeacherSection() {
           <p className="">.</p>
 
           <p className="text-center mt-[5rem]">
-            “if you're looking for a place where you can be assured that they
-            get the best of what you paid for, then Century is the best place.”
+            “if you&#39;re looking for a place where you can be assured that
+            they get the best of what you paid for&#x2c; then Century is the
+            best place.”
           </p>
 
           <div className="text-center mb-[1rem]">
@@ -45,8 +46,9 @@ function TeacherSection() {
           <p className="">.</p>
 
           <p className="text-center mt-[5rem]">
-            “if you're looking for a place where you can be assured that they
-            get the best of what you paid for, then Century is the best place.”
+            “if you&#39;re looking for a place where you can be assured that
+            they get the best of what you paid for&#x2c; then Century is the
+            best place.”
           </p>
 
           <div className="text-center mb-[1rem]">
@@ -67,8 +69,9 @@ function TeacherSection() {
           <p className="">.</p>
 
           <p className="text-center mt-[5rem]">
-            “if you're looking for a place where you can be assured that they
-            get the best of what you paid for, then Century is the best place.”
+            “if you&#39;re looking for a place where you can be assured that
+            they get the best of what you paid for&#x2c; then Century is the
+            best place.”
           </p>
 
           <div className="text-center mb-[1rem]">

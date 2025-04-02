@@ -10,8 +10,8 @@ async function BlogPage() {
         Blog Form
       </h1>
 
-      <Form />
       <Suspense fallback={<Loading />}>
+        <Form />
         <Blog />
       </Suspense>
     </div>

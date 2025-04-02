@@ -47,7 +47,7 @@ function EditNoticePage({ params }: { params: { blogId: string } }) {
         console.log(error);
       }
     })();
-  }, []);
+  }, [params.blogId]);
 
   return (
     <div className="px-[5rem] py-[5rem] tablet:px-[1.5rem]">

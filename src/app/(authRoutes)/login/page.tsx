@@ -1,14 +1,15 @@
 "use client";
+
 import axios, { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-function LoginPage() {
+export default function LoginPage() {
   const { push, refresh } = useRouter();
 
-  const [username, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState("");
+  const [username, setUserName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [errors, setErrors] = useState<string>("");
 
   const loginFunctionHandel = async (e: any) => {
     e.preventDefault();
@@ -65,5 +66,3 @@ function LoginPage() {
     </div>
   );
 }
-
-export default LoginPage;

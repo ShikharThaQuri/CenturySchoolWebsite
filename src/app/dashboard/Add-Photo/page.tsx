@@ -10,8 +10,8 @@ async function PhotoPage() {
       <h1 className="text-center font-bold text-[1.5rem] mb-[3rem]">
         Add Photo
       </h1>
-      <Form />
       <Suspense fallback={<Loading />}>
+        <Form />
         <Photo />
       </Suspense>
     </div>

@@ -6,6 +6,11 @@ import eventPhoto2 from "@/img/event_photo_2.jpg";
 import profile6 from "@/img/profile-6.jpg";
 import profile7 from "@/img/profile-7.jpg";
 import profile9 from "@/img/profile-9.jpg";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 const midColor =
   "flex-[1] tablet:flex-[100%] h-[auto] flex flex-col items-center py-[3rem]";
@@ -44,14 +49,15 @@ function AboutUsPage() {
             WHY US
           </h1>
           <p className="w-[32.5rem] tablet:w-[100%] font-[1.1rem] text-justify">
-            Students have ready access to both academic enrichment and support,
-            as well as to an inviting range of opportunities for social
-            interactions, artistic expression, service learning, and athletics.
-            Students have ready access to both academic enrichment.Students have
-            ready access to both academic enrichment and support, as well as to
-            an inviting range of opportunities for social interactions, artistic
-            expression, service learning, and athletics.Students have ready
-            access to both academic enrichment.
+            Students have ready access to both academic enrichment and
+            support&#x2c; as well as to an inviting range of opportunities for
+            social interactions&#x2c; artistic expression&#x2c; service
+            learning&#x2c; and athletics&#183; Students have ready access to
+            both academic enrichment&#183; Students have ready access to both
+            academic enrichment and support&#x2c; as well as to an inviting
+            range of opportunities for social interactions&#x2c; artistic
+            expression&#x2c; service learning&#x2c; and athletics&#183; Students
+            have ready access to both academic enrichment&#183;
           </p>
         </div>
 
@@ -137,14 +143,15 @@ function AboutUsPage() {
             History
           </h1>
           <p className="w-[32.5rem] tablet:w-[100%] font-[1.1rem] text-justify">
-            Students have ready access to both academic enrichment and support,
-            as well as to an inviting range of opportunities for social
-            interactions, artistic expression, service learning, and athletics.
-            Students have ready access to both academic enrichment.Students have
-            ready access to both academic enrichment and support, as well as to
-            an inviting range of opportunities for social interactions, artistic
-            expression, service learning, and athletics.Students have ready
-            access to both academic enrichment.
+            Students have ready access to both academic enrichment and
+            support&#x2c; as well as to an inviting range of opportunities for
+            social interactions&#x2c; artistic expression&#x2c; service
+            learning&#x2c; and athletics&#183; Students have ready access to
+            both academic enrichment&#183; Students have ready access to both
+            academic enrichment and support&#x2c; as well as to an inviting
+            range of opportunities for social interactions&#x2c; artistic
+            expression&#x2c; service learning&#x2c; and athletics&#183; Students
+            have ready access to both academic enrichment&#183;
           </p>
         </div>
       </div>
@@ -163,9 +170,9 @@ function AboutUsPage() {
             <p className="">.</p>
 
             <p className="text-center mt-[5rem]">
-              “if you're looking for a place where you can be assured that they
-              get the best of what you paid for, then Century is the best
-              place.”
+              &x22;if you&#xB4;re looking for a place where you can be assured
+              that they get the best of what you paid for&#x2c; then Century is
+              the best place.&x22;
             </p>
 
             <div className="text-center mb-[1rem]">
@@ -182,9 +189,9 @@ function AboutUsPage() {
             <p className="">.</p>
 
             <p className="text-center mt-[5rem]">
-              “if you're looking for a place where you can be assured that they
-              get the best of what you paid for, then Century is the best
-              place.”
+              &x22;if you&#xB4;re looking for a place where you can be assured
+              that they get the best of what you paid for&#x2c; then Century is
+              the best place.&x22;
             </p>
 
             <div className="text-center mb-[1rem]">
@@ -201,9 +208,9 @@ function AboutUsPage() {
             <p className="">.</p>
 
             <p className="text-center mt-[5rem]">
-              “if you're looking for a place where you can be assured that they
-              get the best of what you paid for, then Century is the best
-              place.”
+              &x22;if you&#xB4;re looking for a place where you can be assured
+              that they get the best of what you paid for&#x2c; then Century is
+              the best place.&x22;
             </p>
 
             <div className="text-center mb-[1rem]">
@@ -220,9 +227,9 @@ function AboutUsPage() {
             <p className="">.</p>
 
             <p className="text-center mt-[5rem]">
-              “if you're looking for a place where you can be assured that they
-              get the best of what you paid for, then Century is the best
-              place.”
+              &x22;if you&#xB4;re looking for a place where you can be assured
+              that they get the best of what you paid for&#x2c; then Century is
+              the best place.&x22;
             </p>
 
             <div className="text-center mb-[1rem]">
@@ -239,9 +246,9 @@ function AboutUsPage() {
             <p className="">.</p>
 
             <p className="text-center mt-[5rem]">
-              “if you're looking for a place where you can be assured that they
-              get the best of what you paid for, then Century is the best
-              place.”
+              &x22;if you&#xB4;re looking for a place where you can be assured
+              that they get the best of what you paid for&#x2c; then Century is
+              the best place.&x22;
             </p>
 
             <div className="text-center mb-[1rem]">

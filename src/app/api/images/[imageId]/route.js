@@ -28,7 +28,7 @@ export async function DELETE(req, { params }) {
     );
   } catch (error) {
     return Response.json(
-      { success: false, msg: "Error", error },
+      { success: false, msg: "Error !!!", error },
       { status: 400 }
     );
   }
@@ -52,7 +52,7 @@ export async function GET(req, { params }) {
     );
   } catch (error) {
     return Response.json(
-      { success: false, msg: "Error", error },
+      { success: false, msg: "Error !!!", error },
       { status: 400 }
     );
   }

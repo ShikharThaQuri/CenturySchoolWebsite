@@ -2,6 +2,20 @@ import axios, { AxiosError } from "axios";
 import React, { Suspense } from "react";
 // import ImageLinkPage from "../imagelinks";
 import Pagination from "./pagination";
+import { Metadata } from "next";
+
+type Data = {
+  _id: string;
+  writerName: string;
+  heading: string;
+  dis: string;
+  type: string;
+  createdAt: string;
+};
+
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 async function getData(type: string, currentPage: number, blogLimit: number) {
   try {
@@ -43,7 +57,7 @@ async function BlogTypePage({
 
   return (
     <div className="py-[2rem]">
-      {Object.keys(data.result).map((items, i) => (
+      {Object.keys(data.result as Data).map((items, i) => (
         <div
           className="bg-[#FFEA9F] mx-[2rem] px-[1.5rem] pb-[1rem] mb-[2rem]"
           key={i}
